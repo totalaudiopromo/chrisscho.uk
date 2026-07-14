@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  /* Official Total Audio Promo (TAP) Color System Tokens */
+  --tap-bg-base: #fafaf9;          /* Stone-50 warm cream */
+  --tap-bg-raised: #ffffff;        /* Pure white for panels */
+  --tap-bg-surface: #f5f5f4;       /* Stone-100 for inset blocks */
+  --tap-text-primary: #1c1917;     /* Stone-900 near black */
+  --tap-text-secondary: #57534e;   /* Stone-600 soft description text */
+  --tap-text-tertiary: #78716c;    /* Stone-500 light labels/metadata */
+  --tap-border-hairline: #e7e5e4;  /* Stone-200 thin separator lines */
+  --tap-border-subtle: #d6d3d1;    /* Stone-300 standard grid borders */
+  
+  --tap-accent: #0e7490;           /* Cyan-700 primary branding */
+  --tap-accent-hover: #155e75;     /* Cyan-800 button hovers */
+  --tap-accent-muted: rgba(14, 116, 144, 0.08); /* Warm selection tint */
+  
+  --tap-secondary: #d97757;        /* Terracotta for badges & highlights */
+  --tap-secondary-hover: #c0633f;  /* Terracotta hovers */
+  --tap-secondary-muted: rgba(217, 119, 87, 0.08);
+
+  /* TAP Brand Colors from tap-brand-platform-2026 */
+  --tap-brand-raspberry: #ee005a;  /* Primary brand ground for hero */
+  --tap-brand-navy: #012641;       /* Dark ground for sections */
+  --tap-brand-french-blue: #213f95; /* Supporting brand ground */
+  --tap-brand-celadon: #a1e1bc;     /* Soft mint secondary support */
+
+  /* Font bindings */
+  --font-outfit: var(--font-outfit);
+  --font-instrument-serif: var(--font-instrument-serif);
+  --font-jetbrains-mono: var(--font-jetbrains-mono);
+}
+
+@theme inline {
+  /* Bind Tailwind color utilities to TAP tokens */
+  --color-tap-bg: var(--tap-bg-base);
+  --color-tap-raised: var(--tap-bg-raised);
+  --color-tap-surface: var(--tap-bg-surface);
+  --color-tap-text: var(--tap-text-primary);
+  --color-tap-text-secondary: var(--tap-text-secondary);
+  --color-tap-text-tertiary: var(--tap-text-tertiary);
+  --color-tap-border-hairline: var(--tap-border-hairline);
+  --color-tap-border-subtle: var(--tap-border-subtle);
+  
+  --color-tap-accent: var(--tap-accent);
+  --color-tap-accent-hover: var(--tap-accent-hover);
+  --color-tap-accent-muted: var(--tap-accent-muted);
+  
+  --color-tap-secondary: var(--tap-secondary);
+  --color-tap-secondary-hover: var(--tap-secondary-hover);
+  --color-tap-secondary-muted: var(--tap-secondary-muted);
+
+  --color-tap-raspberry: var(--tap-brand-raspberry);
+  --color-tap-navy: var(--tap-brand-navy);
+  --color-tap-french-blue: var(--tap-brand-french-blue);
+  --color-tap-celadon: var(--tap-brand-celadon);
+
+  --font-sans: var(--font-outfit);
+  --font-serif: var(--font-instrument-serif);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+/* Enforce light-only color scheme, disabling system dark mode injections for editorial accuracy */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--tap-bg-base);
+  color: var(--tap-text-primary);
+  font-family: var(--font-outfit), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
