@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Project } from '../config/portfolioConfig';
 
@@ -9,65 +9,21 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  // TAP brand color tokens
   const statusLabels = {
-    active: { label: "Active Campaign Work", color: "bg-[#0e7490]" }, // Cyan-700
-    "soft-live": { label: "Soft-Live Waitlist", color: "bg-[#d97757]" }, // Terracotta
+    active: { label: "Active Campaign Work", color: "bg-[#0e7490]" },
+    "soft-live": { label: "Soft-Live Waitlist", color: "bg-[#d97757]" },
     "self-running": { label: "Self-Running Daemon", color: "bg-neutral-600" },
     parked: { label: "Parked / Offline", color: "bg-neutral-400" }
   };
 
   const status = statusLabels[project.status] || { label: project.status, color: "bg-neutral-500" };
 
-  // Local states for interactive CSS mockup animations
-  const [tapLogs, setTapLogs] = useState<string[]>([]);
-  const [totalAudChecking, setTotalAudChecking] = useState(true);
-
-  // Cycle logs for TAP mockup
-  useEffect(() => {
-    if (project.id !== 'total-audio-promo') return;
-    const initialLogs = [
-      "SYSTEM: Queue synchronized",
-      "API: Fetched 42 active curators",
-      "OUTREACH: Sent pitch 'Mild Peril EP' to KEXP",
-      "OUTREACH: Sent pitch to BBC Radio 6 Music"
-    ];
-    setTapLogs(initialLogs);
-
-    const rotation = [
-      "WEBHOOK: Reply parsed from Pitchfork (Warmth: 85%)",
-      "API: Spotify playlist validation triggered",
-      "OUTREACH: Sent pitch to NTS Radio",
-      "SYSTEM: Weekly digest compiled for Chris"
-    ];
-
-    let cycleIdx = 0;
-    const timer = setInterval(() => {
-      setTapLogs(prev => {
-        const next = [...prev.slice(1), rotation[cycleIdx]];
-        cycleIdx = (cycleIdx + 1) % rotation.length;
-        return next;
-      });
-    }, 4000);
-
-    return () => clearInterval(timer);
-  }, [project.id]);
-
-  // Pulse checker for totalaud.io brief validator mockup
-  useEffect(() => {
-    if (project.id !== 'totalaud-io') return;
-    const interval = setInterval(() => {
-      setTotalAudChecking(prev => !prev);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [project.id]);
-
-  // Render browser chrome frame wrapper for SaaS/Web interfaces
-  const renderBrowserFrame = (children: React.ReactNode) => {
+  // Render browser chrome frame with dynamic CSS scrolling screenshot
+  const renderBrowserFrame = (src: string, alt: string, scrollAmount: string) => {
     return (
       <div className="w-full aspect-[16/10] flex flex-col bg-neutral-100 border-b-2 border-neutral-900 relative group overflow-hidden select-none">
         {/* Browser Top Chrome bar */}
-        <div className="bg-neutral-100 border-b border-neutral-350 py-1.5 px-3 flex items-center justify-between shrink-0">
+        <div className="bg-neutral-100 border-b border-neutral-350 py-1.5 px-3 flex items-center justify-between shrink-0 z-10 relative">
           <div className="flex gap-1">
             <span className="h-1.5 w-1.5 bg-neutral-300 rounded-full border border-neutral-400"></span>
             <span className="h-1.5 w-1.5 bg-neutral-300 rounded-full border border-neutral-400"></span>
@@ -80,9 +36,28 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <span className="h-1 w-1.5 bg-neutral-400 rounded-none"></span>
           </div>
         </div>
-        {/* Mockup Canvas */}
-        <div className="relative flex-grow w-full bg-neutral-50 overflow-hidden font-sans">
-          {children}
+        
+        {/* Scrolling Viewport Container */}
+        <div className="relative flex-grow w-full bg-neutral-50 overflow-hidden">
+          {/* Scroll wrapper translates translation on card hover */}
+          <div 
+            className="absolute top-0 left-0 w-full transition-transform duration-[7000ms] ease-in-out transform translate-y-0"
+            style={{ transform: `translateY(var(--scroll-y, 0))` }}
+          >
+            {/* Using standard img for correct height calculation inside translation */}
+            <img 
+              src={src} 
+              alt={alt} 
+              className="w-full h-auto block" 
+            />
+          </div>
+          
+          {/* Mouse/hover interaction styling via CSS variables */}
+          <style jsx>{`
+            .group:hover div[style*="translateY"] {
+              transform: translateY(${scrollAmount}) !important;
+            }
+          `}</style>
         </div>
       </div>
     );
@@ -92,194 +67,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const renderCardHeader = () => {
     switch (project.id) {
       case 'total-audio-promo':
-        return renderBrowserFrame(
-          <div className="w-full h-full flex bg-[#FAF9F6] text-neutral-800 text-[8px]">
-            {/* Left Sidebar */}
-            <aside className="w-14 bg-tap-navy text-neutral-400 p-2 flex flex-col gap-2 shrink-0 border-r border-neutral-300">
-              <div className="text-white font-serif font-black text-[9px] mb-1">TAP</div>
-              <div className="space-y-1 font-mono text-[6px] tracking-wider">
-                <div className="text-white font-bold bg-[#FAF9F6]/10 px-1 py-0.5">➔ CAMPAIGNS</div>
-                <div className="px-1 py-0.5 hover:text-white">· ARTISTS</div>
-                <div className="px-1 py-0.5 hover:text-white">· CONTACTS</div>
-                <div className="px-1 py-0.5 hover:text-white">· LOGS</div>
-              </div>
-            </aside>
-
-            {/* Main Area */}
-            <main className="flex-grow p-3 flex flex-col justify-between overflow-hidden">
-              <div>
-                <div className="flex justify-between items-center border-b border-neutral-200 pb-1 mb-2 font-mono">
-                  <span className="font-bold text-neutral-900">Campaign // Mild Peril EP</span>
-                  <span className="text-emerald-700 bg-emerald-50 px-1 border border-emerald-300 uppercase tracking-widest font-black text-[6px]">Active</span>
-                </div>
-
-                {/* Dashboard Metrics Grid */}
-                <div className="grid grid-cols-3 gap-2 mb-2 text-center">
-                  <div className="bg-white border border-neutral-300 p-1.5 shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)]">
-                    <div className="font-serif font-bold text-[11px] text-tap-accent">38</div>
-                    <div className="text-[6px] text-neutral-450 uppercase tracking-wider">Contacts</div>
-                  </div>
-                  <div className="bg-white border border-neutral-300 p-1.5 shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)]">
-                    <div className="font-serif font-bold text-[11px] text-tap-raspberry">32</div>
-                    <div className="text-[6px] text-neutral-450 uppercase tracking-wider">Pitches</div>
-                  </div>
-                  <div className="bg-white border border-neutral-300 p-1.5 shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)]">
-                    <div className="font-serif font-bold text-[11px] text-[#0f7490]">21</div>
-                    <div className="text-[6px] text-neutral-450 uppercase tracking-wider">Replies</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ticker System Logs */}
-              <div className="bg-neutral-950 text-neutral-450 p-2 font-mono text-[6.5px] border border-neutral-900 space-y-0.5">
-                <div className="text-[6px] text-neutral-600 font-bold uppercase tracking-wider border-b border-neutral-850 pb-0.5 mb-1 flex justify-between">
-                  <span>OUTREACH FEED</span>
-                  <span className="text-emerald-500">LIVE SYNC</span>
-                </div>
-                {tapLogs.map((log, i) => (
-                  <div key={i} className="truncate transition-opacity duration-300">
-                    <span className="text-tap-raspberry">➔</span> {log}
-                  </div>
-                ))}
-              </div>
-            </main>
-          </div>
-        );
+        return renderBrowserFrame("/tap-landing-screenshot.png", "Total Audio Promo landing page", "-70%");
       
       case 'totalaud-io':
-        return renderBrowserFrame(
-          <div className="w-full h-full bg-[#FAF9F6] p-3.5 flex flex-col justify-between overflow-hidden">
-            {/* Visual Waitlist Header */}
-            <div className="flex justify-between items-start border-b border-neutral-300 pb-2">
-              <div>
-                <h4 className="font-serif text-sm font-bold text-neutral-900 tracking-tight leading-none mb-1">totalaud.io</h4>
-                <p className="text-[7px] text-neutral-500 font-sans">Autonomous label brief ingest & format validator.</p>
-              </div>
-              <span className="text-[6px] font-mono border-2 border-neutral-900 bg-neutral-950 text-[#FAF9F6] px-1 py-0.5 font-bold uppercase tracking-wider">
-                waitlist
-              </span>
-            </div>
-
-            <div className="grid grid-cols-12 gap-3 my-2 items-center">
-              {/* Validation Status Box */}
-              <div className="col-span-7 bg-white p-2.5 border border-neutral-300 shadow-[2px_2px_0px_rgba(0,0,0,1)] font-mono text-[6.5px] space-y-1">
-                <div className="text-[6px] text-neutral-500 uppercase tracking-wider border-b border-neutral-250 pb-0.5">Brief Handoff Checklist</div>
-                <div className="flex justify-between text-emerald-700">
-                  <span>✓ WAV Format check (16-bit, 44.1k)</span>
-                  <span className="font-black">PASSED</span>
-                </div>
-                <div className="flex justify-between text-emerald-700">
-                  <span>✓ Metadata (Artist, ISRC matching)</span>
-                  <span className="font-black">PASSED</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>↳ Artwork Aspect (3000x3000px)</span>
-                  {totalAudChecking ? (
-                    <span className="text-[#d97757] font-black animate-pulse">[CHECKING...]</span>
-                  ) : (
-                    <span className="text-emerald-700 font-black">PASSED</span>
-                  )}
-                </div>
-              </div>
-
-              {/* Waitlist Call-to-action */}
-              <div className="col-span-5 flex flex-col gap-1.5">
-                <input 
-                  type="text" 
-                  disabled 
-                  placeholder="label@name.com" 
-                  className="bg-white border border-neutral-350 p-1 font-mono text-[7px] text-neutral-400 cursor-not-allowed select-none rounded-none text-center" 
-                />
-                <button 
-                  disabled
-                  className="bg-neutral-900 text-white font-mono text-[6.5px] uppercase tracking-wider py-1 font-bold border border-neutral-900 hover:bg-neutral-850 cursor-default"
-                >
-                  Request Access ➔
-                </button>
-              </div>
-            </div>
-
-            <div className="text-[6px] font-mono text-neutral-400 border-t border-neutral-250 pt-1 text-center">
-              Enforcing zero data gaps between record labels and pluggers.
-            </div>
-          </div>
-        );
+        return renderBrowserFrame("/totalaud-landing-screenshot.png", "totalaud.io onboarding dashboard", "-35%");
 
       case 'spotcheck':
-        return renderBrowserFrame(
-          <div className="w-full h-full bg-[#0b0c10] text-[#00ffcc] p-4 flex flex-col justify-between overflow-hidden">
-            {/* Header console */}
-            <div className="flex justify-between border-b border-neutral-850 pb-2 text-[8px] font-mono">
-              <span className="text-white font-bold">SPOTCHECK // Playlisting Auditor</span>
-              <span className="text-neutral-500 font-black">ENG: CONNECTED</span>
-            </div>
-
-            {/* Live Metrics */}
-            <div className="grid grid-cols-3 gap-2 my-2 text-center font-mono">
-              <div className="bg-neutral-900 border border-neutral-800 p-2">
-                <div className="text-[10px] text-white font-black">14</div>
-                <div className="text-[5.5px] text-neutral-500 uppercase tracking-widest mt-0.5">Playlists Sync</div>
-              </div>
-              <div className="bg-neutral-900 border border-neutral-800 p-2">
-                <div className="text-[10px] text-[#00ffcc] font-black">98.2%</div>
-                <div className="text-[5.5px] text-neutral-500 uppercase tracking-widest mt-0.5">Audience Match</div>
-              </div>
-              <div className="bg-neutral-900 border border-neutral-800 p-2">
-                <div className="text-[10px] text-emerald-400 font-black">ACTIVE</div>
-                <div className="text-[5.5px] text-neutral-500 uppercase tracking-widest mt-0.5">API Link</div>
-              </div>
-            </div>
-
-            {/* Curator validator logs */}
-            <div className="space-y-1 font-mono text-[7px] text-neutral-350">
-              <div className="flex justify-between border-b border-neutral-850 pb-0.5 text-neutral-500">
-                <span>Curator Profile</span>
-                <span>Audit Result</span>
-              </div>
-              <div className="flex justify-between">
-                <span>· UK Indie Rock Playlist</span>
-                <span className="text-emerald-400 font-bold">[✓ VALIDATED]</span>
-              </div>
-              <div className="flex justify-between">
-                <span>· Late Night Beats</span>
-                <span className="text-[#00ffcc] font-bold">[✓ MATCH_94%]</span>
-              </div>
-            </div>
-          </div>
-        );
+        return renderBrowserFrame("/spotcheck_screenshot.png", "SpotCheck curator validation dashboard", "-30%");
 
       case 'newsjack':
-        return renderBrowserFrame(
-          <div className="w-full h-full bg-[#FAF9F6] p-3 flex flex-col justify-between overflow-hidden text-[#57534e]">
-            {/* Header */}
-            <div className="flex justify-between border-b border-neutral-250 pb-2 text-[7px] font-mono">
-              <span className="text-neutral-900 font-bold uppercase tracking-wider">Newsjacking Monitor v2.1</span>
-              <span className="text-[#d97757] font-bold">12 RSS FEEDS SCANNED</span>
-            </div>
-
-            {/* RSS Alert Stream */}
-            <div className="space-y-1.5 my-2">
-              <div className="bg-white p-2 border border-neutral-300 shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)] flex justify-between items-center text-[7.5px]">
-                <div className="truncate pr-4 max-w-[180px]">
-                  <span className="font-bold text-neutral-900">[PITCHFORK]</span> Spotify launches automated campaign filters...
-                </div>
-                <span className="bg-emerald-50 text-emerald-700 border border-emerald-300 font-mono text-[6px] px-1 font-black shrink-0">92% RELEVANCE</span>
-              </div>
-              <div className="bg-white p-2 border border-neutral-300 shadow-[1.5px_1.5px_0px_rgba(0,0,0,1)] flex justify-between items-center text-[7.5px]">
-                <div className="truncate pr-4 max-w-[180px]">
-                  <span className="font-bold text-neutral-900">[TWITTER]</span> Independent labels team up to build regional MCP servers...
-                </div>
-                <span className="bg-[#FAF9F6] text-neutral-600 border border-neutral-350 font-mono text-[6px] px-1 shrink-0">84% RELEVANCE</span>
-              </div>
-            </div>
-
-            {/* Action panel footer */}
-            <div className="text-[6.5px] font-mono text-neutral-400 pt-1 border-t border-neutral-200 flex justify-between">
-              <span>Claude budgets configured: active</span>
-              <span>Draft folder auto-updated</span>
-            </div>
-          </div>
-        );
+        return renderBrowserFrame("/newsjack_screenshot.png", "Newsjack newsjacking alert monitor", "-25%");
 
       case 'datasink':
         return (
