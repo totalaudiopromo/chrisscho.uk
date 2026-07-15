@@ -32,7 +32,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative overflow-hidden py-16 md:py-24 bg-tap-raspberry border-b-2 border-neutral-900">
+    <section className="relative overflow-hidden py-12 md:py-24 bg-tap-raspberry border-b-2 border-neutral-900">
       {/* Editorial Zine Header & Grid */}
       <div className="max-w-5xl mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
         
@@ -77,11 +77,11 @@ export default function Hero() {
 
         {/* Column 2: Actual Photograph Collage (3 cols on desktop) */}
         <div className="md:col-span-3 flex flex-col justify-center items-center">
-          <div className="relative border-2 border-neutral-900 p-2 bg-white shadow-[4px_4px_0px_rgba(1,38,65,1)] hover:shadow-[6px_6px_0px_rgba(1,38,65,1)] transition-all duration-300 w-full max-w-[210px] md:max-w-none aspect-[3/4]">
+          <div className="relative border-2 border-neutral-900 p-2 bg-white shadow-[4px_4px_0px_rgba(1,38,65,1)] hover:shadow-[6px_6px_0px_rgba(1,38,65,1)] transition-all duration-300 w-full max-w-[210px] aspect-[3/4] md:max-w-none">
             {/* Real photo clipping visual */}
             <div className="relative w-full h-full overflow-hidden border border-neutral-300 bg-neutral-100">
               <Image 
-                src="/chris-schofield-founder.jpg" 
+                src="/chris-schofield-founder-min (1).jpg" 
                 alt="Chris Schofield - Founder Photograph" 
                 fill
                 sizes="(max-w-768px) 100vw, 33vw"
@@ -96,43 +96,45 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Column 3: Console Terminal (4 cols on desktop) */}
+        {/* Column 3: Console Terminal (4 cols on desktop) - fixed height prevents layout shifts */}
         <div className="md:col-span-4 flex flex-col justify-center">
-          <div className="bg-[#FAF9F6] border-2 border-neutral-900 p-4 font-mono text-[9px] text-neutral-850 shadow-[4px_4px_0px_rgba(1,38,65,1)] w-full">
-            <div className="flex justify-between items-center mb-3 border-b border-neutral-250 pb-2 text-neutral-500 font-bold uppercase tracking-wider text-[8px]">
-              <span>syslog://session-init</span>
-              <div className="flex gap-1.5">
-                <span className="h-1.5 w-1.5 bg-neutral-200 rounded-full"></span>
-                <span className="h-1.5 w-1.5 bg-neutral-200 rounded-full"></span>
-                <span className="h-1.5 w-1.5 bg-tap-raspberry rounded-full animate-pulse"></span>
+          <div className="bg-[#FAF9F6] border-2 border-neutral-900 p-4 font-mono text-[9px] text-neutral-850 shadow-[4px_4px_0px_rgba(1,38,65,1)] w-full min-h-[170px] flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between items-center mb-3 border-b border-neutral-250 pb-2 text-neutral-500 font-bold uppercase tracking-wider text-[8px]">
+                <span>syslog://session-init</span>
+                <div className="flex gap-1.5">
+                  <span className="h-1.5 w-1.5 bg-neutral-200 rounded-full"></span>
+                  <span className="h-1.5 w-1.5 bg-neutral-200 rounded-full"></span>
+                  <span className="h-1.5 w-1.5 bg-tap-raspberry rounded-full animate-pulse"></span>
+                </div>
               </div>
-            </div>
-            <div className="space-y-1">
-              {terminalLines.map((line, idx) => {
-                if (!line) return null;
-                return (
-                  <div key={idx} className="leading-relaxed whitespace-pre-wrap">
-                    <span className="text-neutral-400 select-none mr-1.5 font-bold">log:</span>
-                    {line.startsWith("  [+]") ? (
-                      <span>
-                        &nbsp;&nbsp;[<span className="text-tap-raspberry font-bold">+</span>]
-                        {line.substring(5)}
-                      </span>
-                    ) : line.includes(" established") ? (
-                      <span>
-                        {line.split(" established")[0]}
-                        <span className="text-tap-raspberry font-bold"> established</span>
-                        {line.split(" established")[1]}
-                      </span>
-                    ) : (
-                      line
-                    )}
-                  </div>
-                );
-              })}
-              {terminalLines.length < logScript.length && (
-                <div className="inline-block h-2.5 w-1.5 bg-tap-raspberry animate-pulse ml-0.5" />
-              )}
+              <div className="space-y-1">
+                {terminalLines.map((line, idx) => {
+                  if (!line) return null;
+                  return (
+                    <div key={idx} className="leading-relaxed whitespace-pre-wrap">
+                      <span className="text-neutral-400 select-none mr-1.5 font-bold">log:</span>
+                      {line.startsWith("  [+]") ? (
+                        <span>
+                          &nbsp;&nbsp;[<span className="text-tap-raspberry font-bold">+</span>]
+                          {line.substring(5)}
+                        </span>
+                      ) : line.includes(" established") ? (
+                        <span>
+                          {line.split(" established")[0]}
+                          <span className="text-tap-raspberry font-bold"> established</span>
+                          {line.split(" established")[1]}
+                        </span>
+                      ) : (
+                        line
+                      )}
+                    </div>
+                  );
+                })}
+                {terminalLines.length < logScript.length && (
+                  <div className="inline-block h-2.5 w-1.5 bg-tap-raspberry animate-pulse ml-0.5" />
+                )}
+              </div>
             </div>
           </div>
         </div>

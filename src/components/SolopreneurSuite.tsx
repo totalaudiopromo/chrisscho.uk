@@ -252,13 +252,13 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
       {/* Selector and Code Block Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         
-        {/* Left Side: 6-tab script list selector */}
-        <div className="lg:col-span-5 flex flex-col gap-2 font-mono text-xs h-full justify-between">
+        {/* Left Side: 6-tab script list selector - horizontally scrollable on mobile, vertically stacked on desktop */}
+        <div className="lg:col-span-5 flex flex-row lg:flex-col gap-2 font-mono text-xs overflow-x-auto lg:overflow-x-visible pb-3 lg:pb-0 select-none scrollbar-thin">
           {Object.entries(scripts).map(([key, script]) => (
             <button
               key={key}
               onClick={() => setActiveTab(key as any)}
-              className={`p-3 text-left border-2 border-neutral-900 transition-all font-bold rounded-none flex flex-col justify-between ${
+              className={`p-3 text-left border-2 border-neutral-900 transition-all font-bold rounded-none flex flex-col justify-between shrink-0 min-w-[145px] lg:min-w-0 lg:w-full ${
                 activeTab === key
                   ? 'bg-tap-accent text-white shadow-[3px_3px_0px_rgba(1,38,65,1)] translate-x-[-1px] translate-y-[-1px]'
                   : 'bg-white text-neutral-850 hover:bg-neutral-50 shadow-[2px_2px_0px_rgba(0,0,0,1)]'
@@ -269,7 +269,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
               }`}>
                 {script.category}
               </span>
-              <span className="text-xs font-semibold tracking-tight">{script.name}</span>
+              <span className="text-xs font-semibold tracking-tight whitespace-nowrap lg:whitespace-normal">{script.name}</span>
             </button>
           ))}
         </div>

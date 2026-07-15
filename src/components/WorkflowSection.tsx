@@ -27,13 +27,13 @@ export default function WorkflowSection({ workflows }: WorkflowSectionProps) {
           </p>
         </div>
 
-        {/* Tab switcher buttons */}
-        <div className="flex flex-wrap gap-2 shrink-0 font-mono text-xs">
+        {/* Tab switcher buttons - swipeable on mobile */}
+        <div className="flex flex-row overflow-x-auto gap-2 pb-2 md:pb-0 shrink-0 font-mono text-xs w-full md:w-auto select-none scrollbar-none">
           {workflows.map((wf, idx) => (
             <button
               key={wf.id}
               onClick={() => setActiveIdx(idx)}
-              className={`px-3.5 py-2 border-2 transition-all rounded-none font-bold ${
+              className={`px-3.5 py-2 border-2 transition-all rounded-none font-bold shrink-0 whitespace-nowrap ${
                 activeIdx === idx
                   ? 'bg-neutral-900 text-[#FAF9F6] border-neutral-900 shadow-[3px_3px_0px_0px_rgba(238,0,90,1)]'
                   : 'bg-white text-neutral-600 border-neutral-950 hover:bg-neutral-50 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]'
