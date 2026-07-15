@@ -81,7 +81,7 @@ export default function Hero() {
             {/* Real photo clipping visual */}
             <div className="relative w-full h-full overflow-hidden border border-neutral-300 bg-neutral-100">
               <Image 
-                src="/chris-schofield-founder-min (1).jpg" 
+                src="/chris-schofield-founder.jpg" 
                 alt="Chris Schofield - Founder Photograph" 
                 fill
                 sizes="(max-w-768px) 100vw, 33vw"
