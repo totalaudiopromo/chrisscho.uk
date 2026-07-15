@@ -286,7 +286,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
               {scripts[activeTab].description}
             </p>
 
-            <pre className="text-[9px] leading-relaxed text-neutral-350 font-mono overflow-x-auto whitespace-pre bg-neutral-900/40 p-4 border border-neutral-850 select-all max-h-[220px] overflow-y-auto">
+            <pre className="text-[9px] leading-relaxed text-neutral-100 font-mono overflow-x-auto whitespace-pre bg-neutral-900/40 p-4 border border-neutral-850 select-all max-h-[220px] overflow-y-auto">
               {scripts[activeTab].code}
             </pre>
           </div>
