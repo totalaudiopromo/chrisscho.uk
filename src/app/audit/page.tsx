@@ -14,12 +14,12 @@ const audit = services.find((s) => s.slug === "ai-workflow-audit")!;
 export const metadata: Metadata = {
   title: "AI Workflow Audit — £750, money-back guarantee",
   description:
-    "A fixed-price AI workflow audit for owner-run businesses. Find 5+ hours a week to reclaim, or your money back. £750. Music industry a speciality.",
+    "A fixed-price AI workflow audit for owner-run businesses. Find 7+ hours a week to reclaim, or your money back. £750. Music industry a speciality.",
   alternates: { canonical: "/audit" },
   openGraph: {
     title: "AI Workflow Audit for Small Businesses",
     description:
-      "Find 5+ hours a week hiding in your business — or your money back. £750, fixed price.",
+      "Find 7+ hours a week hiding in your business — or your money back. £750, fixed price.",
     url: "/audit",
   },
 };
@@ -88,7 +88,7 @@ export default function AuditPage() {
           [ THE AI WORKFLOW AUDIT ]
         </div>
         <h1 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 leading-[1.02] max-w-3xl">
-          Find 5+ hours a week hiding in your business — or your money back.
+          Find 7+ hours a week hiding in your business — or your money back.
         </h1>
         <p className="mt-6 text-base md:text-lg text-tap-text-secondary leading-relaxed max-w-2xl">
           A fixed-price audit for owner-run businesses. I sit with you for 45 minutes, find where
@@ -120,13 +120,13 @@ export default function AuditPage() {
             The guarantee
           </div>
           <p className="font-serif text-2xl md:text-3xl font-bold leading-snug">
-            If I can&apos;t find you at least five hours a week to reclaim within 30 days, you get a
-            full refund.
+            If I can&apos;t find you at least seven hours a week to reclaim within 30 days, you get
+            a full refund.
           </p>
           <p className="mt-3 text-sm text-neutral-300 max-w-2xl">
-            The average audit finds around seven hours a week at roughly £45 a month in tool costs.
-            The maths is built to work heavily in your favour — which is exactly why I can make the
-            promise.
+            Seven hours is what the average audit finds — usually at roughly £45 a month in tool
+            costs. The maths is built to work heavily in your favour — which is exactly why I can
+            make the promise.
           </p>
         </div>
       </section>

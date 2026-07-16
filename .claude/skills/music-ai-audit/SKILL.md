@@ -17,8 +17,9 @@ dilute the music proof when pitching music businesses.
 ## The offer in one line
 
 A 45-minute discovery call → Claude analysis → a simple report prescribing 3–7 off-the-shelf
-tools that reclaim 5+ hours/week → a 30-minute review call. **Full refund if fewer than 5
-hours/week of savings are found within 30 days.**
+tools that reclaim 7+ hours/week → a 30-minute review call. **Full refund if fewer than 7
+hours/week of savings are found within 30 days.** (Raised from 5 on 16 Jul 2026 — see
+`guarantee.md` for the trade-off notes.)
 
 ## The four phases
 

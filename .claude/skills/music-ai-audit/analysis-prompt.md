@@ -46,8 +46,8 @@ From the transcript, produce:
 5. ROI — Corey's exact formula: monthly net ROI = (weekly hours returned × their hourly rate × 4)
    − monthly tool cost. Give total weekly hours reclaimed and total monthly tool cost (£)
    separately too. Done right this lands in four figures monthly ("always four figures, sometimes
-   five"). It must clear the 5-hours/week guarantee; the benchmark averages are ~7 hours/week
-   found at ~£45/month of tools.
+   five"). It must clear the 7-hours/week guarantee; the benchmark averages are ~7 hours/week
+   found at ~£45/month of tools — so the total needs to be at or above average, not merely close.
 
 6. WHAT COMES AFTER — 2–3 higher-effort, high-impact opportunities that are NOT off-the-shelf:
    custom automations I could build (speed-to-lead agent, contact-hygiene pipeline, release/
@@ -69,7 +69,7 @@ implementation opportunity, not a prescription.
 
 - Would I actually install this tool for my own business? If not, cut it.
 - Is the price and hours-saved estimate defensible if the client pushes back?
-- Does the total clear 5 hours/week? If it's marginal, dig for more in the transcript or trim to
+- Does the total clear 7 hours/week? If it's marginal, dig for more in the transcript or trim to
   the strongest 3–4 rather than padding.
 - Is anything music-specific better solved by a tool I know from running campaigns? Override Claude.
 - Does the "what comes after" list contain at least one thing I'd genuinely enjoy building? That's

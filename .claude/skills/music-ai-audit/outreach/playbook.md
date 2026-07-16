@@ -30,7 +30,7 @@ you'd never heard of; best case you've found a partner for all the AI stuff on y
 
 On the call: find one obvious time-sink, prescribe one off-the-shelf tool, then: *"If that was
 useful, the full audit maps 5–7 of these with a report and a 4-day plan — £750, and I refund it if
-I can't find you 5 hours a week back."*
+I can't find you 7 hours a week back."*
 
 **Target first:** anyone Chris has a real relationship with — Liberty contacts (client-side, not as
 TAP prospects — keep those separate), artists, managers, label people, studio owners. **Not just

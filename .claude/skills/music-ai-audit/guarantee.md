@@ -2,15 +2,19 @@
 
 ## The guarantee (the conversion lever)
 
-> If I can't find you at least **5 hours a week** of time savings within **30 days**, you get a
+> If I can't find you at least **7 hours a week** of time savings within **30 days**, you get a
 > **100% refund**.
+
+(Raised from Corey's 5 to 7 on 16 Jul 2026 — Chris's call: "find 5 hours isn't very appealing."
+7 is the average an audit finds, so the claim is honest, but it means roughly half of audits sit
+at or below the threshold — the mitigations below matter more now.)
 
 This is what makes £750 an easy yes at zero social proof. It is real and must be honoured.
 
 **The pitch, near-verbatim from Corey (adapt, don't dilute):**
 > We sit down for 45 minutes and do a structured interview. From that conversation I prescribe
-> three to seven off-the-shelf AI tools you can implement immediately to reclaim 5–10 hours a
-> week. And if I can't find at least 5 hours a week of opportunity, you get 100% of your money
+> three to seven off-the-shelf AI tools you can implement immediately to reclaim 7–10 hours a
+> week. And if I can't find at least 7 hours a week of opportunity, you get 100% of your money
 > back. The only thing you have to lose is 45 minutes of your time.
 
 Notes:
@@ -20,7 +24,7 @@ Notes:
 - "Found" = prescribed in the report with a defensible hours estimate, not "you must have installed
   it". You control the deliverable; you don't control whether they act. Keep the language about what
   the report *identifies*.
-- If a client genuinely can't get to 5 hours (very small, very lean operation), say so on the
+- If a client genuinely can't get to 7 hours (very small, very lean operation), say so on the
   discovery call and don't take the £750 — offer a free mini-audit instead. Better a referral than
   a refund.
 - Put the guarantee in writing on the offer page, the booking confirmation, and the report cover.

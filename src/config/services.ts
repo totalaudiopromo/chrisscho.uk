@@ -28,13 +28,13 @@ export const services: Service[] = [
     name: "AI Workflow Audit",
     title: "AI Workflow Audit for Small Businesses",
     description:
-      "A fixed-price AI workflow audit for owner-run businesses: a 45-minute call, a report prescribing the tools to reclaim 5+ hours a week, and a review call. £750, or your money back. Music industry a speciality.",
+      "A fixed-price AI workflow audit for owner-run businesses: a 45-minute call, a report prescribing the tools to reclaim 7+ hours a week, and a review call. £750, or your money back. Music industry a speciality.",
     priceRange: "£750 fixed · money-back guarantee",
     timeline: "Report in days · review call to follow",
     kicker: "[ SERVICE // 01 ]",
     intro: [
       "Most owner-run businesses are losing five to ten hours a week to admin that a handful of off-the-shelf tools would erase — inbox overload, chasing leads, retyping the same data between apps, invoicing, scheduling. You don't need a bespoke build to fix that. You need someone who ships this stuff daily to sit with you for 45 minutes and tell you exactly which tools to install on Monday.",
-      "That's the audit. I map where your week actually goes, then hand you a plain report: the three-to-seven tools that will save you the most time, what each costs, how long it takes to set up, and a four-day plan to get them running. If I can't find you at least five hours a week back within 30 days, you get a full refund — I've built the offer so the maths works heavily in your favour.",
+      "That's the audit. I map where your week actually goes, then hand you a plain report: the three-to-seven tools that will save you the most time, what each costs, how long it takes to set up, and a four-day plan to get them running. If I can't find you at least seven hours a week back within 30 days, you get a full refund — I've built the offer so the maths works heavily in your favour.",
       "I come from the music industry — four years of radio promotion and nine shipped systems on the back of it — so labels, studios, managers, and PR agencies are home turf. But the framework works for any business that runs on email, spreadsheets, and a busy owner: agencies, trades, professional services, e-commerce.",
     ],
     deliverables: [
@@ -43,7 +43,7 @@ export const services: Service[] = [
       "An effort-versus-impact matrix so you know what to do first",
       "A four-day quick-start plan you can run in ten minutes a day",
       "A 30-minute review call to walk through it and answer questions",
-      "Money-back guarantee: 5+ hours a week found in 30 days, or a full refund",
+      "Money-back guarantee: 7+ hours a week found in 30 days, or a full refund",
     ],
     faqs: [
       {
@@ -54,7 +54,7 @@ export const services: Service[] = [
       {
         question: "What's the money-back guarantee, exactly?",
         answer:
-          "If the report can't identify at least five hours a week of time savings for you within 30 days, you pay nothing. The average audit finds around seven hours a week at roughly £45/month of tool cost, so it's a safe promise to make.",
+          "If the report can't identify at least seven hours a week of time savings for you within 30 days, you pay nothing. Seven hours is what the average audit finds — usually at roughly £45/month of tool cost — so the promise is grounded in what these audits actually deliver.",
       },
       {
         question: "Do I need to be technical, or already using AI?",

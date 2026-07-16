@@ -110,7 +110,7 @@ for any client.
 ## Close the call
 
 - "Anything I didn't ask that eats your time?"
-- "What would 5 extra hours a week actually let you do?" (this becomes the ROI framing)
+- "What would 7 extra hours a week actually let you do?" (this becomes the ROI framing)
 - Set expectations: *"You'll get the report in [X days], then we book 30 minutes to walk through it."*
 
 ## After the call

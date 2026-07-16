@@ -51,7 +51,7 @@ Roughly half say they'd rather have it done for them. That's the implementation 
 
 ## If they say no to the upsell
 
-Fine. They still got a £750 report that saves them 5+ hours/week — that's a happy client and a case
+Fine. They still got a £750 report that saves them 7+ hours/week — that's a happy client and a case
 study (with permission). Ask: **"Would you be open to me writing up what we did, anonymised if you
 prefer? And do you know anyone else this would help?"** Referrals are the cheapest channel.
 
