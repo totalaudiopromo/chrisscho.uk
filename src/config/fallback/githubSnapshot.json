@@ -2,52 +2,99 @@
   "commits": [
     {
       "repo": "chrisscho.uk",
-      "message": "SEO infrastructure: sitemap, robots, manifest, dynamic OG images, JSON-LD builders, shared site chrome",
-      "sha": "d2d1001",
-      "date": "2026-07-16T09:38:43+00:00"
+      "message": "fix(build-log): totalaudiopromo is a user not an org — use /users/{name}/repos",
+      "sha": "2c85f92",
+      "date": "2026-07-16T13:12:48Z"
     },
     {
       "repo": "chrisscho.uk",
-      "message": "accuracy + perf pass: honest screenshot labels, next/image everywhere, 13MB->408KB public assets, lint fixes",
-      "sha": "bb2318d",
-      "date": "2026-07-16T09:35:31+00:00"
+      "message": "Portfolio polish: live data showcase, multi-page SEO expansion, agent-written build log (#1)",
+      "sha": "10a7638",
+      "date": "2026-07-16T13:09:57Z"
+    },
+    {
+      "repo": "tap-cli",
+      "message": "feat: v0.3.1 — migrate all commands to REST v1 API (#2)",
+      "sha": "fc81a8b",
+      "date": "2026-07-16T12:38:29Z"
     },
     {
       "repo": "chrisscho.uk",
       "message": "style: fixed text contrast on solopreneur code window",
       "sha": "5895a71",
-      "date": "2026-07-15T16:12:39+01:00"
+      "date": "2026-07-15T15:12:39Z"
     },
     {
       "repo": "chrisscho.uk",
       "message": "asset: replaced onboarding placeholder with live totalaud.io landing screenshot",
       "sha": "8dd7e49",
-      "date": "2026-07-15T16:10:52+01:00"
+      "date": "2026-07-15T15:10:52Z"
     },
     {
       "repo": "chrisscho.uk",
       "message": "feat: replaced mock CSS divs with real landing screenshots and scroll translation",
       "sha": "c749416",
-      "date": "2026-07-15T16:05:37+01:00"
+      "date": "2026-07-15T15:05:37Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "feat: replaced static screenshots with fully interactive CSS dashboards",
+      "sha": "eb7e019",
+      "date": "2026-07-15T15:02:32Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "fix: corrected image source path in Hero.tsx",
+      "sha": "a107474",
+      "date": "2026-07-15T14:53:55Z"
     },
     {
       "repo": "chrisscho.uk",
       "message": "style: optimized mobile responsiveness, swipeable tabs, and layout stability",
       "sha": "2e6e25d",
-      "date": "2026-07-15T15:50:14+01:00"
+      "date": "2026-07-15T14:50:14Z"
     },
     {
       "repo": "chrisscho.uk",
       "message": "initial commit: SEO optimized chrisscho.uk portfolio",
       "sha": "7437fdd",
-      "date": "2026-07-14T22:53:07+01:00"
+      "date": "2026-07-14T21:53:07Z"
+    },
+    {
+      "repo": "totalaud.io",
+      "message": "feat(label): Label OS workspace for independent labels (#125)",
+      "sha": "68c2cf4",
+      "date": "2026-07-12T00:01:02Z"
+    },
+    {
+      "repo": "podflow",
+      "message": "feat: optimize website for AI overview search indexing and visibility",
+      "sha": "95d2129",
+      "date": "2026-07-10T05:44:44Z"
     }
   ],
-  "repoCount": 1,
+  "repoCount": 11,
   "languages": [
-    { "name": "TypeScript", "pct": 97 },
-    { "name": "CSS", "pct": 2 },
-    { "name": "JavaScript", "pct": 1 }
+    {
+      "name": "TypeScript",
+      "pct": 91
+    },
+    {
+      "name": "PLpgSQL",
+      "pct": 5
+    },
+    {
+      "name": "HTML",
+      "pct": 1
+    },
+    {
+      "name": "JavaScript",
+      "pct": 1
+    },
+    {
+      "name": "CSS",
+      "pct": 1
+    }
   ],
-  "fetchedAt": "2026-07-16T09:40:00.000Z"
+  "fetchedAt": "2026-07-16T13:13:07.167Z"
 }
