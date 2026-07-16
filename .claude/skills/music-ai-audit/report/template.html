@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AI Workflow Audit — Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  /* ---- TAP brand tokens (chrisscho.uk) ---- */
+  :root {
+    --bg:        #fafaf9;  /* warm cream */
+    --raised:    #ffffff;
+    --surface:   #f5f5f4;
+    --ink:       #1c1917;
+    --ink-2:     #57534e;
+    --ink-3:     #78716c;
+    --hair:      #e7e5e4;
+    --accent:    #ee005a;  /* raspberry — primary accent (was Corey's orange) */
+    --cyan:      #0e7490;  /* secondary accent */
+    --navy:      #012641;  /* dark slides */
+    --celadon:   #a1e1bc;
+
+    --pad-x: 110px;
+    --pad-y: 88px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body { background: #d8d5cf; color: var(--ink); font-family: "Outfit", system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+
+  /* Each slide is a 16:9 stage. Scales down responsively; prints one per page. */
+  .deck { display: flex; flex-direction: column; align-items: center; gap: 28px; padding: 28px 0; }
+  .slide {
+    position: relative;
+    width: 1280px; height: 720px;   /* 16:9, 2/3 scale of 1920×1080 — sharp on screen + print */
+    background: var(--bg);
+    border: 2px solid var(--ink);
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.85);
+    padding: var(--pad-y) var(--pad-x);
+    overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .slide.dark { background: var(--navy); color: #f5efe6; border-color: #000; }
+  .slide.dark .eyebrow { color: var(--accent); }
+  .slide.dark .title { color: #fff; }
+  .slide.dark .card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.16); }
+
+  .eyebrow { font-family: "JetBrains Mono", monospace; font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  .title { font-family: "Instrument Serif", Georgia, serif; font-size: 58px; line-height: 1.02; letter-spacing: -0.01em; margin-top: 10px; }
+  .rule { width: 64px; height: 4px; background: var(--accent); border: 0; margin: 18px 0 26px; }
+  .content { flex: 1; display: flex; flex-direction: column; }
+  .pagenum { position: absolute; right: var(--pad-x); bottom: 40px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--ink-3); letter-spacing: 0.15em; }
+  .slide.dark .pagenum { color: rgba(245,239,230,0.5); }
+  .brandmark { position: absolute; left: var(--pad-x); bottom: 40px; font-family: "JetBrains Mono", monospace; font-size: 12px; color: var(--ink-3); letter-spacing: 0.12em; }
+  .slide.dark .brandmark { color: rgba(245,239,230,0.5); }
+
+  /* fill guides: any empty [data-fill] shows a dashed underline */
+  [data-fill]:empty { display: inline-block; min-width: 180px; min-height: 1em; border-bottom: 2px dashed var(--ink-3); }
+  .slide.dark [data-fill]:empty { border-bottom-color: rgba(245,239,230,0.4); }
+
+  .card { background: var(--raised); border: 2px solid var(--ink); box-shadow: 4px 4px 0 rgba(0,0,0,1); padding: 26px 28px; }
+  .label { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); font-weight: 700; }
+  .slide.dark .label { color: rgba(245,239,230,0.6); }
+
+  .accent { color: var(--accent); }
+  .num { font-family: "Instrument Serif", serif; color: var(--accent); font-weight: 400; }
+
+  /* --- Cover --- */
+  .cover-h1 { font-family: "Instrument Serif", serif; font-size: 128px; line-height: 0.98; letter-spacing: -0.02em; }
+  .cover-sub { font-size: 26px; color: var(--ink-2); margin-top: 24px; }
+  .metarow { display: flex; gap: 56px; margin-top: auto; }
+  .metarow .k { font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); }
+  .metarow .v { font-size: 22px; margin-top: 6px; }
+
+  /* --- Exec summary --- */
+  .exec { display: grid; grid-template-columns: 1.25fr 1fr; gap: 24px; flex: 1; }
+  .exec .col { display: flex; flex-direction: column; gap: 24px; }
+  .exec .body { font-size: 21px; line-height: 1.35; margin-top: 12px; color: var(--ink); }
+  .herostat { background: var(--accent); color: #fff; border-color: #000; flex: 2; display: flex; flex-direction: column; justify-content: center; }
+  .herostat .big { font-family: "Instrument Serif", serif; font-size: 116px; line-height: 1; }
+  .herostat .cap { font-size: 19px; margin-top: 8px; }
+  .focuscard { background: var(--navy); color: #fff; border-color: #000; flex: 1; }
+  .focuscard .big { font-family: "Instrument Serif", serif; font-size: 40px; margin-top: 8px; }
+
+  /* --- Matrix --- */
+  .matrix-wrap { display: grid; grid-template-columns: 40px 1fr; gap: 14px; flex: 1; }
+  .yaxis { display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+  .yaxis span { writing-mode: vertical-rl; transform: rotate(180deg); font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+  .matrix { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; }
+  .quad { border: 2px solid var(--ink); padding: 20px 22px; }
+  .quad h3 { font-family: "Instrument Serif", serif; font-size: 30px; margin-bottom: 6px; }
+  .quad p { font-size: 15px; color: var(--ink-2); }
+  .quad.qw { background: var(--accent); color: #fff; }
+  .quad.qw p { color: rgba(255,255,255,0.9); }
+  .qw-dots { display: flex; gap: 8px; margin-top: 14px; }
+  .qw-dots i { width: 26px; height: 26px; border: 2px solid #fff; border-radius: 50%; display: grid; place-items: center; font-family: "JetBrains Mono", monospace; font-size: 12px; font-weight: 700; font-style: normal; }
+  .xaxis { grid-column: 2; display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); margin-top: 8px; }
+
+  /* --- Quick wins list --- */
+  .qwlist { display: flex; flex-direction: column; gap: 12px; flex: 1; justify-content: center; }
+  .qwrow { display: grid; grid-template-columns: 54px 1fr 40px 1fr; align-items: center; gap: 18px; border-bottom: 1px solid var(--hair); padding-bottom: 12px; }
+  .qwrow .n { font-family: "Instrument Serif", serif; font-size: 34px; color: var(--accent); }
+  .qwrow .pain { font-size: 19px; color: var(--ink-2); }
+  .qwrow .arrow { color: var(--accent); font-size: 24px; text-align: center; }
+  .qwrow .fix { font-size: 19px; font-weight: 600; }
+
+  /* --- Tool cards --- */
+  .tools { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 16px; flex: 1; }
+  .toolcard { display: flex; flex-direction: column; }
+  .toolcard .th { display: flex; align-items: baseline; gap: 10px; }
+  .toolcard .th .n { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--accent); font-weight: 700; }
+  .toolcard .th .name { font-family: "Instrument Serif", serif; font-size: 26px; }
+  .toolcard .use { font-size: 15px; color: var(--ink-2); margin: 8px 0 14px; flex: 1; }
+  .toolcard .meta { display: flex; flex-direction: column; gap: 4px; }
+  .toolcard .meta .row { display: flex; justify-content: space-between; font-family: "JetBrains Mono", monospace; font-size: 12px; }
+  .toolcard .meta .row .k { color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.1em; }
+  .toolcard .meta .row.save .v { color: var(--accent); font-weight: 700; }
+
+  /* --- 4 day plan --- */
+  .days { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; flex: 1; }
+  .day { display: flex; flex-direction: column; }
+  .day .dn { font-family: "Instrument Serif", serif; font-size: 84px; color: var(--accent); line-height: 1; }
+  .day .dl { font-family: "JetBrains Mono", monospace; font-size: 15px; text-transform: uppercase; letter-spacing: 0.12em; margin: 6px 0 16px; color: #fff; }
+  .day .task { font-size: 18px; line-height: 1.3; flex: 1; color: #f5efe6; }
+  .day .tool { font-family: "JetBrains Mono", monospace; font-size: 12px; color: rgba(245,239,230,0.6); margin-top: 14px; letter-spacing: 0.08em; }
+
+  /* --- What comes after --- */
+  .after { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; flex: 1; align-content: center; }
+  .after .col .n { font-family: "Instrument Serif", serif; font-size: 92px; color: var(--accent); line-height: 1; }
+  .after .col hr { border: 0; border-top: 2px solid var(--hair); margin: 14px 0; }
+  .after .col .txt { font-size: 24px; line-height: 1.28; }
+  .after .col .tl { font-family: "JetBrains Mono", monospace; font-size: 13px; color: var(--ink-3); margin-top: 12px; letter-spacing: 0.08em; }
+
+  /* --- Financial --- */
+  .fin { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: 1fr 1fr; gap: 18px; flex: 1; }
+  .fin .roi { grid-row: 1 / span 2; background: var(--accent); color: #fff; border-color: #000; display: flex; flex-direction: column; justify-content: center; }
+  .fin .roi .big { font-family: "Instrument Serif", serif; font-size: 150px; line-height: 0.95; }
+  .fin .roi .cap { font-size: 19px; margin-top: 10px; }
+  .fin .mini { background: var(--navy); color: #fff; border-color: #000; }
+  .fin .mini .big { font-family: "Instrument Serif", serif; font-size: 80px; line-height: 1; }
+  .fin .mini .cap { font-size: 15px; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+  /* --- Next steps --- */
+  .steps { display: flex; flex-direction: column; gap: 30px; flex: 1; justify-content: center; }
+  .step { display: grid; grid-template-columns: 90px 1fr; gap: 24px; align-items: start; }
+  .step .n { font-family: "Instrument Serif", serif; font-size: 84px; color: var(--accent); line-height: 0.9; }
+  .step .h { font-family: "Instrument Serif", serif; font-size: 34px; }
+  .step .d { font-size: 19px; color: #d8cfc4; margin-top: 6px; }
+  .cta { display: inline-block; margin-top: 18px; background: var(--accent); color: #fff; font-family: "JetBrains Mono", monospace; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 16px 28px; border: 2px solid #000; }
+
+  @media print {
+    html, body { background: #fff; }
+    .deck { gap: 0; padding: 0; }
+    .slide { box-shadow: none; border: none; page-break-after: always; width: 100%; height: 100vh; }
+  }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 01 · COVER -->
+  <section class="slide dark" data-label="Cover">
+    <div class="eyebrow" data-fill>chrisscho.uk · AI Workflow Audit</div>
+    <div class="content" style="justify-content:center">
+      <div class="cover-h1">AI Workflow<br /><span class="accent">Audit</span></div>
+      <div class="cover-sub">Prepared for <strong data-fill class="js-client"></strong></div>
+    </div>
+    <div class="metarow">
+      <div><div class="k">Assessment date</div><div class="v" data-fill></div></div>
+      <div><div class="k">Business type</div><div class="v" data-fill></div></div>
+      <div><div class="k">Primary focus</div><div class="v" data-fill></div></div>
+    </div>
+    <div class="pagenum">01 / 09</div>
+  </section>
+
+  <!-- 02 · EXECUTIVE SUMMARY -->
+  <section class="slide" data-label="Executive Summary">
+    <div class="eyebrow">Where you are · where you're going</div>
+    <h2 class="title">Executive Summary</h2>
+    <hr class="rule" />
+    <div class="exec">
+      <div class="col">
+        <div class="card"><div class="label">The pain</div><div class="body" data-fill></div></div>
+        <div class="card"><div class="label">The outcome</div><div class="body" data-fill></div></div>
+      </div>
+      <div class="col">
+        <div class="card herostat"><div class="big" data-fill></div><div class="cap">Hours you can reclaim every week</div></div>
+        <div class="card focuscard"><div class="label">Primary focus</div><div class="big" data-fill></div></div>
+      </div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">02 / 09</div>
+  </section>
+
+  <!-- 03 · IMPACT–EFFORT MATRIX -->
+  <section class="slide" data-label="Impact-Effort Matrix">
+    <div class="eyebrow">Where the value is</div>
+    <h2 class="title">Impact &amp; Effort Matrix</h2>
+    <hr class="rule" />
+    <div class="matrix-wrap">
+      <div class="yaxis"><span>High impact</span><span>Low impact</span></div>
+      <div style="display:flex;flex-direction:column">
+        <div class="matrix">
+          <div class="quad qw">
+            <h3>Quick Wins</h3><p>High impact, low effort — this report focuses here.</p>
+            <div class="qw-dots"><i>1</i><i>2</i><i>3</i><i>4</i><i>5</i><i>6</i></div>
+          </div>
+          <div class="quad"><h3>Major Projects</h3><p>High impact, high effort — phase these in after the wins (the build).</p></div>
+          <div class="quad"><h3>Fill-Ins</h3><p>Low impact, low effort — do them when time allows.</p></div>
+          <div class="quad"><h3>Skip For Now</h3><p>Low impact, high effort — not worth the time yet.</p></div>
+        </div>
+        <div class="xaxis"><span>Low effort</span><span>High effort</span></div>
+      </div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">03 / 09</div>
+  </section>
+
+  <!-- 04 · QUICK WINS -->
+  <section class="slide" data-label="Quick Wins">
+    <div class="eyebrow">High impact, low effort</div>
+    <h2 class="title">Quick Wins</h2>
+    <hr class="rule" />
+    <div class="qwlist">
+      <div class="qwrow"><div class="n">01</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+      <div class="qwrow"><div class="n">02</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+      <div class="qwrow"><div class="n">03</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+      <div class="qwrow"><div class="n">04</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+      <div class="qwrow"><div class="n">05</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+      <div class="qwrow" style="border-bottom:0"><div class="n">06</div><div class="pain" data-fill></div><div class="arrow">→</div><div class="fix" data-fill></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">04 / 09</div>
+  </section>
+
+  <!-- 05 · RECOMMENDED SOLUTIONS -->
+  <section class="slide" data-label="Recommended Solutions">
+    <div class="eyebrow">The tool stack</div>
+    <h2 class="title">Recommended Solutions</h2>
+    <hr class="rule" />
+    <div class="tools">
+      <!-- repeat 6× -->
+      <div class="card toolcard"><div class="th"><span class="n">01</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+      <div class="card toolcard"><div class="th"><span class="n">02</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+      <div class="card toolcard"><div class="th"><span class="n">03</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+      <div class="card toolcard"><div class="th"><span class="n">04</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+      <div class="card toolcard"><div class="th"><span class="n">05</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+      <div class="card toolcard"><div class="th"><span class="n">06</span><span class="name" data-fill></span></div><div class="use" data-fill></div><div class="meta"><div class="row"><span class="k">Cost</span><span class="v" data-fill></span></div><div class="row"><span class="k">Setup</span><span class="v" data-fill></span></div><div class="row save"><span class="k">Saves</span><span class="v" data-fill></span></div></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">05 / 09</div>
+  </section>
+
+  <!-- 06 · 4-DAY PLAN -->
+  <section class="slide dark" data-label="4-Day Plan">
+    <div class="eyebrow">Start this week</div>
+    <h2 class="title">Your 4-Day Quick-Start</h2>
+    <hr class="rule" />
+    <div class="days">
+      <div class="day"><div class="dn">1</div><div class="dl">Day One</div><div class="task" data-fill></div><div class="tool">Tool · <span data-fill></span></div></div>
+      <div class="day"><div class="dn">2</div><div class="dl">Day Two</div><div class="task" data-fill></div><div class="tool">Tool · <span data-fill></span></div></div>
+      <div class="day"><div class="dn">3</div><div class="dl">Day Three</div><div class="task" data-fill></div><div class="tool">Tool · <span data-fill></span></div></div>
+      <div class="day"><div class="dn">4</div><div class="dl">Day Four</div><div class="task" data-fill></div><div class="tool">Tool · <span data-fill></span></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">06 / 09</div>
+  </section>
+
+  <!-- 07 · WHAT COMES AFTER -->
+  <section class="slide" data-label="What Comes After">
+    <div class="eyebrow">The next phase</div>
+    <h2 class="title">What Comes After the Quick Wins</h2>
+    <hr class="rule" />
+    <div class="after">
+      <div class="col"><div class="n">01</div><hr /><div class="txt" data-fill></div><div class="tl" data-fill></div></div>
+      <div class="col"><div class="n">02</div><hr /><div class="txt" data-fill></div><div class="tl" data-fill></div></div>
+      <div class="col"><div class="n">03</div><hr /><div class="txt" data-fill></div><div class="tl" data-fill></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk · these are built, not off-the-shelf</div>
+    <div class="pagenum">07 / 09</div>
+  </section>
+
+  <!-- 08 · FINANCIAL IMPACT -->
+  <section class="slide" data-label="Financial Impact">
+    <div class="eyebrow">The bottom line</div>
+    <h2 class="title">Financial Impact</h2>
+    <hr class="rule" />
+    <div class="fin">
+      <div class="card roi"><div class="label" style="color:rgba(255,255,255,0.8)">Monthly net value</div><div class="big" data-fill></div><div class="cap" data-fill></div></div>
+      <div class="card mini"><div class="label">Weekly time returned</div><div class="big" data-fill></div><div class="cap" data-fill></div></div>
+      <div class="card mini"><div class="label">Total monthly tool cost</div><div class="big" data-fill></div><div class="cap" data-fill></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk</div>
+    <div class="pagenum">08 / 09</div>
+  </section>
+
+  <!-- 09 · NEXT STEPS -->
+  <section class="slide dark" data-label="Next Steps">
+    <div class="eyebrow">Let's get moving</div>
+    <h2 class="title">Your Next Steps</h2>
+    <hr class="rule" />
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><div class="h" data-fill></div><div class="d" data-fill></div></div></div>
+      <div class="step"><div class="n">2</div><div><div class="h" data-fill></div><div class="d" data-fill></div><a class="cta" href="#">Book your review call →</a></div></div>
+    </div>
+    <div class="brandmark">chrisscho.uk · AI Workflow Audit</div>
+    <div class="pagenum">09 / 09</div>
+  </section>
+
+</div>
+</body>
+</html>
