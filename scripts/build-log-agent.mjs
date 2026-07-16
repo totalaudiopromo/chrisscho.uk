@@ -56,7 +56,9 @@ async function github(url) {
 // --- 1. Collect the week's commits across the org ---
 
 const since = new Date(Date.now() - 7 * 86400000);
-const repos = await github(`https://api.github.com/orgs/${ORG}/repos?sort=pushed&per_page=50`);
+// totalaudiopromo is a user account, not an org — /orgs/{name}/repos 404s.
+// Use /users/{name}/repos, which returns public repos only (this feed is public).
+const repos = await github(`https://api.github.com/users/${ORG}/repos?sort=pushed&per_page=50`);
 const activeRepos = repos.filter((r) => !r.fork && new Date(r.pushed_at) >= since);
 
 const commitsByRepo = {};
