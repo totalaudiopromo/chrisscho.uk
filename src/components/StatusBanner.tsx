@@ -1,27 +1,53 @@
 import React from 'react';
+import { getUptimeReport, SiteStatus } from '../lib/uptime';
 
-export default function StatusBanner() {
-  const statuses = [
-    { label: "Datasink CLI", value: "v1.2.0 (Stable)", highlight: false },
-    { label: "SpotCheck API", value: "200 OK", highlight: false },
-    { label: "TAP Engine", value: "Active (Liberty V2)", highlight: true },
-    { label: "Finisher Chain", value: "Float64 Pure", highlight: false }
-  ];
+function statusText(site: SiteStatus): { value: string; tone: "ok" | "warn" } {
+  if (site.up === true) {
+    return { value: `${site.status} · ${site.ms}ms`, tone: "ok" };
+  }
+  if (site.up === false) {
+    return { value: `${site.status ?? "ERR"}`, tone: "warn" };
+  }
+  return { value: "NO RESPONSE", tone: "warn" };
+}
+
+function checkedAgo(iso: string): string {
+  const minutes = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60000));
+  if (minutes < 1) return "just now";
+  if (minutes < 60) return `${minutes}m ago`;
+  return `${Math.round(minutes / 60)}h ago`;
+}
+
+export default async function StatusBanner() {
+  const report = await getUptimeReport();
 
   return (
     <div className="bg-[#FAF9F6] border-y-2 border-neutral-900 text-neutral-800 py-3 select-none overflow-hidden relative shadow-sm">
       <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono">
-        
-        {/* Dynamic status indicators */}
-        <div className="flex flex-wrap gap-x-6 gap-y-2 justify-center sm:justify-start">
-          {statuses.map((s) => (
-            <div key={s.label} className="flex items-center gap-1.5">
-              <span className="text-neutral-500 font-bold">[{s.label}]:</span>
-              <span className={s.highlight ? "text-orange-700 font-black" : "text-neutral-800 font-medium"}>
-                {s.value}
-              </span>
-            </div>
-          ))}
+
+        {/* Genuine server-side reachability checks against the live properties */}
+        <div className="flex flex-wrap gap-x-5 gap-y-2 justify-center sm:justify-start items-center">
+          {report.sites.map((site) => {
+            const { value, tone } = statusText(site);
+            return (
+              <div key={site.host} className="flex items-center gap-1.5">
+                <span
+                  className={`h-1.5 w-1.5 rounded-full ${
+                    tone === "ok" ? "bg-emerald-500" : "bg-amber-500"
+                  }`}
+                ></span>
+                <span className="text-neutral-500 font-bold text-[10px]">[{site.host}]:</span>
+                <span
+                  className={`text-[10px] ${
+                    tone === "ok" ? "text-neutral-800 font-medium" : "text-amber-700 font-bold"
+                  }`}
+                >
+                  {value}
+                </span>
+              </div>
+            );
+          })}
+          <span className="text-[9px] text-neutral-400">checked {checkedAgo(report.checkedAt)}</span>
         </div>
 
         {/* Consulting availability indicator */}

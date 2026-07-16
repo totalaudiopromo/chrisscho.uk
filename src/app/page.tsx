@@ -9,6 +9,10 @@ import Advisory from '../components/Advisory';
 import { portfolioProjects } from '../config/portfolioConfig';
 import { portfolioWorkflows } from '../config/workflows';
 
+// Regenerate at most every 5 minutes: uptime pings refresh per interval,
+// GitHub activity keeps its own 1-hour data cache (src/lib/github.ts).
+export const revalidate = 300;
+
 export default function Home() {
   return (
     <div className="bg-tap-bg text-tap-text min-h-screen font-sans antialiased selection:bg-tap-raspberry selection:text-white">
