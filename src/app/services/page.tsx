@@ -39,7 +39,7 @@ export default function ServicesPage() {
           </h1>
           <p className="text-tap-text-secondary text-sm font-sans leading-relaxed">
             Done-with-you AI systems engineering. Every service below is architecture I run in
-            production across my own portfolio — this site's live commit feed and status pings
+            production across my own portfolio — this site&apos;s live commit feed and status pings
             included.
           </p>
         </div>
