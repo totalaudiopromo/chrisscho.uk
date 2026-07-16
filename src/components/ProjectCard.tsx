@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '../config/portfolioConfig';
 
 interface ProjectCardProps {
@@ -316,6 +317,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
           
+          {/* Internal case-file link */}
+          <Link
+            href={`/projects/${project.id}`}
+            className="font-mono text-[10px] uppercase tracking-widest font-bold text-tap-raspberry hover:underline"
+          >
+            Read the case file →
+          </Link>
+
           {/* Backlink CTA button */}
           <div>
             {project.liveUrl ? (
