@@ -49,6 +49,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "BSBQ_J36NT1DqngpO9bPo0Pbszli-I4RWQIYrP5qlLU",
+  },
   openGraph: {
     title: "Chris Schofield | AI Agentic Workflow Consulting & Systems Architect",
     description:
