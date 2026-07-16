@@ -51,7 +51,7 @@ export default function Hero() {
             </p>
             
             <p className="font-sans text-sm text-[#F5F2EB] leading-relaxed max-w-sm">
-              I build high-throughput pipeline architectures, custom API integrations, and **Obsidian-grounded Second Brain databases**. I engineer agentic workflows that automate operations and accelerate delivery across any industry.
+              I build high-throughput pipeline architectures, custom API integrations, and <strong className="font-bold text-white">Obsidian-grounded Second Brain databases</strong>. I engineer agentic workflows that automate operations and accelerate delivery across any industry.
             </p>
           </div>
 
@@ -81,7 +81,7 @@ export default function Hero() {
             {/* Real photo clipping visual */}
             <div className="relative w-full h-full overflow-hidden border border-neutral-300 bg-neutral-100">
               <Image 
-                src="/chris-schofield-founder.jpg" 
+                src="/chris-schofield-founder.webp"
                 alt="Chris Schofield - Founder Photograph" 
                 fill
                 sizes="(max-w-768px) 100vw, 33vw"

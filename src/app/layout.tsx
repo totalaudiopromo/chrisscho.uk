@@ -5,7 +5,7 @@ import "./globals.css";
 const outfit = Outfit({
   variable: "--font-outfit",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const instrumentSerif = Instrument_Serif({
@@ -53,17 +53,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  className,
 }: Readonly<{
   children: React.ReactNode;
-  className?: string;
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Chris Schofield AI Consulting",
-    "image": "https://chrisscho.uk/chris-schofield-founder.jpg",
+    "image": "https://chrisscho.uk/chris-schofield-founder.webp",
     "url": "https://chrisscho.uk",
     "address": {
       "@type": "PostalAddress",

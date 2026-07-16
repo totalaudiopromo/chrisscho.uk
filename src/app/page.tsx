@@ -60,7 +60,7 @@ export default function Home() {
             Production Software & Tooling
           </h2>
           <p className="text-tap-text-secondary text-sm font-sans leading-relaxed">
-            Curated SaaS products, list engines, and developer-labs repositories. Toggle the **"Real Visuals"** tab on any card to view actual workspace screenshots and layouts.
+            Curated SaaS products, list engines, and developer-labs repositories. Cards marked <span className="font-mono text-[10px] uppercase font-bold">[ Live Screenshot ]</span> show the real product; terminal-native tools carry labelled illustrations of their interfaces.
           </p>
         </div>
 
@@ -121,7 +121,7 @@ export default function Home() {
           </div>
           
           <div className="flex flex-col gap-3 font-mono text-[9px] uppercase font-bold tracking-widest md:text-right shrink-0">
-            <span className="text-neutral-500 font-semibold">// Live Portals</span>
+            <span className="text-neutral-500 font-semibold">{"// Live Portals"}</span>
             <a href="https://totalaudiopromo.com" target="_blank" rel="noopener noreferrer" className="text-neutral-350 hover:text-white transition-colors">
               Total Audio Promo ↗
             </a>
