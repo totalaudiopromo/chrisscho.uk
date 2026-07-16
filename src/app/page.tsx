@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import Hero from '../components/Hero';
 import StatusBanner from '../components/StatusBanner';
 import ProjectCard from '../components/ProjectCard';
@@ -22,6 +23,30 @@ export default function Home() {
 
       {/* Status Banner */}
       <StatusBanner />
+
+      {/* Lead offer — AI Workflow Audit */}
+      <section className="py-12 border-b-2 border-neutral-900 bg-tap-navy">
+        <div className="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-block font-mono text-[9px] uppercase tracking-widest bg-tap-raspberry text-white px-2 py-0.5 font-bold mb-3">
+              [ NEW // AI WORKFLOW AUDIT ]
+            </div>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-white leading-snug">
+              Running a music business? Find 5+ hours a week to reclaim — or your money back.
+            </h2>
+            <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
+              A fixed-price £750 audit for labels, managers, PR agencies, and studios: a 45-minute
+              call, a report of the tools that win your week back, and a guarantee.
+            </p>
+          </div>
+          <Link
+            href="/audit"
+            className="shrink-0 inline-block text-center px-5 py-3 font-mono text-xs font-bold uppercase tracking-widest border-2 border-neutral-900 bg-[#FAF9F6] text-tap-navy hover:bg-white transition-all shadow-[4px_4px_0px_rgba(238,0,90,1)]"
+          >
+            See the audit →
+          </Link>
+        </div>
+      </section>
 
       {/* Projects / Systems Section */}
       <section id="systems" className="py-20 max-w-5xl mx-auto px-6 border-b-2 border-neutral-900">

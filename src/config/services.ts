@@ -24,6 +24,52 @@ export interface Service {
 
 export const services: Service[] = [
   {
+    slug: "music-ai-audit",
+    name: "AI Workflow Audit",
+    title: "AI Workflow Audit for Music Businesses",
+    description:
+      "A fixed-price AI workflow audit for labels, managers, PR agencies, and studios: a 45-minute call, a report prescribing the tools to reclaim 5+ hours a week, and a review call. £750, or your money back.",
+    priceRange: "£750 fixed · money-back guarantee",
+    timeline: "Report in days · review call to follow",
+    kicker: "[ SERVICE // 01 ]",
+    intro: [
+      "Most music businesses are losing five to ten hours a week to admin that a handful of off-the-shelf tools would erase — inbox overload, chasing contacts, packaging releases, retyping the same data between apps. You don't need a bespoke build to fix that. You need someone who has done the job to sit with you for 45 minutes and tell you exactly which tools to install on Monday.",
+      "That's the audit. I map where your week actually goes, then hand you a plain report: the three-to-seven tools that will save you the most time, what each costs, how long it takes to set up, and a four-day plan to get them running. If I can't find you at least five hours a week back within 30 days, you get a full refund — I've built the offer so the maths works heavily in your favour.",
+    ],
+    deliverables: [
+      "A 45-minute discovery call mapping where your time actually goes",
+      "A report prescribing 3–7 off-the-shelf tools, with real GBP costs and hours saved",
+      "An effort-versus-impact matrix so you know what to do first",
+      "A four-day quick-start plan you can run in ten minutes a day",
+      "A 30-minute review call to walk through it and answer questions",
+      "Money-back guarantee: 5+ hours a week found in 30 days, or a full refund",
+    ],
+    faqs: [
+      {
+        question: "How is this different from your other services?",
+        answer:
+          "This is the front door. The audit finds the quick wins any music business can install themselves. If you'd rather have the deeper automations built for you — a speed-to-lead agent, contact-hygiene pipelines, release automation — that's the implementation build, and your £750 comes off the price.",
+      },
+      {
+        question: "What's the money-back guarantee, exactly?",
+        answer:
+          "If the report can't identify at least five hours a week of time savings for you within 30 days, you pay nothing. The average audit finds around seven hours a week at roughly £45/month of tool cost, so it's a safe promise to make.",
+      },
+      {
+        question: "Do I need to be technical, or already using AI?",
+        answer:
+          "No. Most of the tools I prescribe take ten minutes to set up and need no technical knowledge. The whole point is that someone who runs campaigns and ships software translates it into plain, specific steps for your business.",
+      },
+      {
+        question: "Which music businesses is this for?",
+        answer:
+          "Independent labels, artist managers, music PR agencies, studios and producers, and self-releasing artists. The framework is the same; the questions and tools change to fit how you actually work.",
+      },
+    ],
+    relatedProjectIds: ["total-audio-promo", "spotcheck", "newsjack"],
+    musicCrossLink: true,
+  },
+  {
     slug: "ai-agentic-workflow-consulting",
     name: "Agentic Workflow Consulting",
     title: "AI Agentic Workflow Consulting",
@@ -31,7 +77,7 @@ export const services: Service[] = [
       "Done-with-you AI agentic workflow consulting: audit your manual operations, map the automation, and ship working multi-agent pipelines. Blueprint from £500.",
     priceRange: "£500 blueprint · £2,000–5,000 build · £1,000–2,000/mo ops",
     timeline: "1 week audit · 2–6 week builds",
-    kicker: "[ SERVICE // 01 ]",
+    kicker: "[ SERVICE // 02 ]",
     intro: [
       "Most businesses don't need more AI tools — they need the ones they have wired together properly. I audit how work actually moves through your operation, map which steps an agent can own outright, which need a human in the loop, and which should be deleted rather than automated.",
       "Then I build it: agent pipelines with real error handling, API integrations that survive schema changes, and documentation your team can operate without me. Everything I recommend runs in production across my own portfolio of shipped systems — this site's commit feed and status banner are live proof.",
@@ -70,7 +116,7 @@ export const services: Service[] = [
       "Claude Code configured for your team's real workflow: custom skills, hooks, MCP servers, and guardrails. Flat-rate setup from £1,500 by a daily power user.",
     priceRange: "£1,500–3,000 flat rate",
     timeline: "1–2 weeks",
-    kicker: "[ SERVICE // 02 ]",
+    kicker: "[ SERVICE // 03 ]",
     intro: [
       "Claude Code out of the box is a strong pair programmer. Configured properly — project memory, custom skills, pre-commit hooks, MCP servers for your email, database, and project tracker — it becomes an operations layer for your whole business.",
       "I run my company on this setup daily: this website ships its own weekly changelog through an agent pipeline, and my products' release workflows run through Claude Code with custom tooling. I install that same working configuration into your environment, tuned to your codebase and your guardrails.",
@@ -104,7 +150,7 @@ export const services: Service[] = [
       "Workflow automation for labels, PR agencies, and artists — built by a working radio promoter. Campaign pipelines, contact intelligence, and release automation.",
     priceRange: "£500 blueprint · builds from £2,000",
     timeline: "Scoped per engagement",
-    kicker: "[ SERVICE // 03 ]",
+    kicker: "[ SERVICE // 04 ]",
     intro: [
       "I've spent four years doing radio promotion, and I've shipped an ecosystem of music-tech products because of it: a campaign OS for PR agencies, a playlist validator, a newsjacking daemon, and contact-hygiene tooling. That means automation advice grounded in how campaigns actually run — not generic consulting applied to music.",
       "For labels and artists I build release automation: brief packaging, asset validation, metadata pipelines, and streaming analytics. For agencies, the deeper campaign work lives at Total Audio Promo, my flagship platform.",
@@ -139,7 +185,7 @@ export const services: Service[] = [
       "A complete AI operations stack installed end-to-end: agent environments, MCP integrations, second-brain knowledge base, and automation pipelines. £4,000–8,000.",
     priceRange: "£4,000–8,000",
     timeline: "4–8 weeks",
-    kicker: "[ SERVICE // 04 ]",
+    kicker: "[ SERVICE // 05 ]",
     intro: [
       "For businesses ready to go beyond one workflow: a full AI operations stack, installed and hardened end-to-end. Agent environments (Claude Code, always-on assistants), an Obsidian-grounded knowledge base your agents can actually cite, MCP integrations across your tools, and the automation pipelines that tie it together.",
       "This is the same architecture my own company runs on — a solo operation shipping and maintaining nine production systems. The infrastructure is what makes that leverage possible, and it transfers.",
