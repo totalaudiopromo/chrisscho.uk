@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "../lib/jsonld";
 import { portfolioProjects } from "../config/portfolioConfig";
+import { services } from "../config/services";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -17,5 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((service) => ({
+    url: `${SITE_URL}/services/${service.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes];
 }
