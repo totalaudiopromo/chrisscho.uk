@@ -64,8 +64,11 @@ interface CommitResponse {
  */
 export async function getOrgActivity(): Promise<GithubActivity> {
   try {
+    // totalaudiopromo is a user account, not an org — /orgs/{name}/repos 404s
+    // and forces the hero into its cached fallback. /users/{name}/repos is
+    // the correct endpoint (public repos only, which is all this hero shows).
     const repos = await githubJson<RepoResponse[]>(
-      `https://api.github.com/orgs/${ORG}/repos?sort=pushed&per_page=20`
+      `https://api.github.com/users/${ORG}/repos?sort=pushed&per_page=20`
     );
     const active = repos.filter((repo) => !repo.fork).slice(0, TOP_REPOS);
 
