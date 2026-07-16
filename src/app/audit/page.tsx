@@ -5,9 +5,8 @@ import JsonLd from "../../components/JsonLd";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "../../lib/jsonld";
 import { services } from "../../config/services";
 
-// Booking: reuses the live advisory event so the CTA never dead-links.
-// Swap to a dedicated event (e.g. .../ai-audit) once created in Cal.com.
-const BOOKING_URL = "https://cal.com/chris-schofield/advisory-discovery-call";
+// Dedicated Cal.com event (45 min, 6 intake questions) — created 16 Jul 2026.
+const BOOKING_URL = "https://cal.com/chris-schofield/ai-workflow-audit";
 
 const audit = services.find((s) => s.slug === "ai-workflow-audit")!;
 
