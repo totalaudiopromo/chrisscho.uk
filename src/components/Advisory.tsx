@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 export default function Advisory() {
   const tiers = [
@@ -48,11 +49,12 @@ export default function Advisory() {
     }
   ];
 
-  const setups = [
+  const setups: { name: string; price: string; description: string; href?: string }[] = [
     {
       name: "Claude Code Setup",
       price: "£1,500–3,000",
-      description: "Claude Code configured for your project workflow — custom coding skills, pre-commit hooks, and MCP servers (Gmail, Monday, SQL) configured for your workspace."
+      description: "Claude Code configured for your project workflow — custom coding skills, pre-commit hooks, and MCP servers (Gmail, Monday, SQL) configured for your workspace.",
+      href: "/services/claude-code-setup"
     },
     {
       name: "OpenClaw Setup",
@@ -63,6 +65,12 @@ export default function Advisory() {
       name: "Hermes Setup",
       price: "£1,200–2,500",
       description: "A lightweight, always-on helper agent watching your inbox, trained on your historical copy to write and queue media pitches."
+    },
+    {
+      name: "Full AI Infrastructure",
+      price: "£4,000–8,000",
+      description: "The complete stack end-to-end: agent environments, MCP integrations across your tools, an Obsidian-grounded knowledge base, and the automation pipelines that tie it together.",
+      href: "/services/full-ai-infrastructure"
     }
   ];
 
@@ -78,6 +86,17 @@ export default function Advisory() {
         </h2>
         <p className="text-tap-text-secondary text-sm leading-relaxed font-sans">
           Practical workflow automation built by a working promoter with 4 years of radio experience. We work directly with your agency to harden your operations, plug in APIs, and free up campaign hours.
+        </p>
+        <p className="text-xs text-neutral-500 font-sans mt-3">
+          Full engagement details on the{" "}
+          <Link href="/services" className="font-bold text-tap-raspberry hover:underline">
+            services pages
+          </Link>
+          . Music PR agencies: the platform-specific funnel lives at{" "}
+          <a href="https://totalaudiopromo.com/advisory" target="_blank" rel="noopener" className="font-bold text-tap-raspberry hover:underline">
+            TAP advisory
+          </a>
+          .
         </p>
       </div>
 
@@ -141,11 +160,19 @@ export default function Advisory() {
           Done-with-you setups to install, secure, and customize developer tooling and agent frameworks in your local or cloud setup.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {setups.map((setup) => (
             <div key={setup.name} className="border-2 border-neutral-900 bg-tap-raised p-6 flex flex-col justify-between rounded-none shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_rgba(0,0,0,1)] transition-all">
               <div>
-                <h4 className="font-serif text-lg font-bold text-neutral-950 mb-1">{setup.name}</h4>
+                <h4 className="font-serif text-lg font-bold text-neutral-950 mb-1">
+                  {setup.href ? (
+                    <Link href={setup.href} className="hover:text-tap-raspberry transition-colors">
+                      {setup.name} →
+                    </Link>
+                  ) : (
+                    setup.name
+                  )}
+                </h4>
                 <div className="font-serif text-lg font-semibold text-neutral-800 border-b border-neutral-250 pb-2 mb-4">
                   {setup.price} <span className="text-[10px] font-mono text-neutral-500 font-normal">project flat rate</span>
                 </div>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Project } from '../config/portfolioConfig';
 
 interface ProjectCardProps {
@@ -18,8 +19,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   const status = statusLabels[project.status] || { label: project.status, color: "bg-neutral-500" };
 
+  // Corner tag marking real screenshots vs illustrated terminal mockups
+  const renderProvenanceTag = (kind: "screenshot" | "illustration") => (
+    <span
+      className={`absolute bottom-1.5 right-1.5 z-20 text-[7px] font-mono uppercase tracking-widest px-1.5 py-0.5 border font-bold select-none ${
+        kind === "screenshot"
+          ? "bg-emerald-50 text-emerald-800 border-emerald-700"
+          : "bg-neutral-100 text-neutral-500 border-neutral-400"
+      }`}
+    >
+      {kind === "screenshot" ? "[ LIVE SCREENSHOT ]" : "[ ILLUSTRATION ]"}
+    </span>
+  );
+
   // Render browser chrome frame with dynamic CSS scrolling screenshot
-  const renderBrowserFrame = (src: string, alt: string, scrollAmount: string) => {
+  const renderBrowserFrame = (src: string, alt: string, scrollAmount: string, width: number, height: number) => {
     return (
       <div className="w-full aspect-[16/10] flex flex-col bg-neutral-100 border-b-2 border-neutral-900 relative group overflow-hidden select-none">
         {/* Browser Top Chrome bar */}
@@ -36,22 +50,25 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <span className="h-1 w-1.5 bg-neutral-400 rounded-none"></span>
           </div>
         </div>
-        
+
         {/* Scrolling Viewport Container */}
         <div className="relative flex-grow w-full bg-neutral-50 overflow-hidden">
           {/* Scroll wrapper translates translation on card hover */}
-          <div 
+          <div
             className="absolute top-0 left-0 w-full transition-transform duration-[7000ms] ease-in-out transform translate-y-0"
             style={{ transform: `translateY(var(--scroll-y, 0))` }}
           >
-            {/* Using standard img for correct height calculation inside translation */}
-            <img 
-              src={src} 
-              alt={alt} 
-              className="w-full h-auto block" 
+            {/* Explicit width/height keeps intrinsic ratio for the translate animation */}
+            <Image
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="w-full h-auto block"
             />
           </div>
-          
+
           {/* Mouse/hover interaction styling via CSS variables */}
           <style jsx>{`
             .group:hover div[style*="translateY"] {
@@ -59,6 +76,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             }
           `}</style>
         </div>
+        {renderProvenanceTag("screenshot")}
       </div>
     );
   };
@@ -67,20 +85,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const renderCardHeader = () => {
     switch (project.id) {
       case 'total-audio-promo':
-        return renderBrowserFrame("/tap-landing-screenshot.png", "Total Audio Promo landing page", "-70%");
-      
+        return renderBrowserFrame("/tap-landing-screenshot.webp", "Total Audio Promo landing page", "-70%", 1600, 4000);
+
       case 'totalaud-io':
-        return renderBrowserFrame("/totalaud-landing-screenshot.png", "totalaud.io onboarding dashboard", "-35%");
+        return renderBrowserFrame("/totalaud-landing-screenshot.webp", "totalaud.io onboarding dashboard", "-35%", 1600, 1000);
 
       case 'spotcheck':
-        return renderBrowserFrame("/spotcheck_screenshot.png", "SpotCheck curator validation dashboard", "-30%");
+        return renderBrowserFrame("/spotcheck_screenshot.webp", "SpotCheck curator validation dashboard", "-30%", 1280, 800);
 
       case 'newsjack':
-        return renderBrowserFrame("/newsjack_screenshot.png", "Newsjack newsjacking alert monitor", "-25%");
+        return renderBrowserFrame("/newsjack_screenshot.webp", "Newsjack newsjacking alert monitor", "-25%", 1280, 800);
 
       case 'datasink':
         return (
-          <div className="w-full aspect-[16/10] bg-[#0b0c10] text-[#0e7490] p-3.5 font-mono text-[8px] flex flex-col justify-between select-none leading-relaxed border-b-2 border-neutral-900">
+          <div className="w-full aspect-[16/10] bg-[#0b0c10] text-[#0e7490] p-3.5 font-mono text-[8px] flex flex-col justify-between select-none leading-relaxed border-b-2 border-neutral-900 relative">
+            {renderProvenanceTag("illustration")}
             {/* Terminal Top bar */}
             <div className="flex justify-between items-center text-white border-b border-neutral-850 pb-1.5 font-bold uppercase tracking-wider text-[7px]">
               <span>bash // datasink-scrub</span>
@@ -112,7 +131,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 <span className="text-emerald-400 font-bold">[TYPO_FIX]</span>
               </div>
               <div className="flex justify-between items-center bg-neutral-900/40 px-1.5 py-0.5 border border-neutral-850">
-                <span>[RINSE] "Chris S" / "Chris Schofield"</span>
+                <span>{'[RINSE] "Chris S" / "Chris Schofield"'}</span>
                 <span className="text-cyan-400 font-bold">[MERGED_0.94]</span>
               </div>
               <div className="flex justify-between items-center bg-neutral-900/40 px-1.5 py-0.5 border border-neutral-850">
@@ -131,7 +150,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       case 'audx':
         return (
-          <div className="w-full aspect-[16/10] bg-[#0b0c10] text-[#45f3ff] p-3 font-mono text-[8px] flex flex-col justify-between select-none leading-[1.1] border-b-2 border-neutral-900">
+          <div className="w-full aspect-[16/10] bg-[#0b0c10] text-[#45f3ff] p-3 font-mono text-[8px] flex flex-col justify-between select-none leading-[1.1] border-b-2 border-neutral-900 relative">
+            {renderProvenanceTag("illustration")}
             {/* Real TUI app.py transport bar styling */}
             <div className="flex justify-between items-center text-white border-b border-neutral-850 pb-1.5 font-bold uppercase tracking-wider text-[7px]">
               <span>▶ audx  last.audx</span>
@@ -174,7 +194,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       case 'sadact-finisher':
         return (
-          <div className="w-full aspect-[16/10] bg-[#FAF9F6] p-4 font-mono text-[9px] flex flex-col justify-between border-b-2 border-neutral-900">
+          <div className="w-full aspect-[16/10] bg-[#FAF9F6] p-4 font-mono text-[9px] flex flex-col justify-between border-b-2 border-neutral-900 relative">
+            {renderProvenanceTag("illustration")}
             <div className="flex justify-between border-b border-neutral-250 pb-1.5 text-neutral-500 font-bold">
               <span>FINISHER DSP ENGINE</span>
               <span className="text-[#0e7490]">PROFILE: UKG_GOLD</span>
@@ -199,9 +220,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       case 'sadact-uk':
         return (
           <div className="relative w-full aspect-[16/10] overflow-hidden bg-neutral-900 flex items-center justify-center border-b-2 border-neutral-900">
-            <Image 
-              src="/sadact_artwork.jpg" 
-              alt="sadact mild peril EP artwork" 
+            <Image
+              src="/sadact_artwork.webp"
+              alt="sadact mild peril EP artwork"
               fill 
               sizes="(max-w-768px) 100vw, 33vw"
               className="object-cover opacity-85"
@@ -214,7 +235,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       case 'podflow':
         return (
-          <div className="w-full aspect-[16/10] bg-neutral-950 text-neutral-350 p-4 font-mono text-[8px] flex flex-col justify-between shadow-inner leading-normal border-b-2 border-neutral-900">
+          <div className="w-full aspect-[16/10] bg-neutral-950 text-neutral-350 p-4 font-mono text-[8px] flex flex-col justify-between shadow-inner leading-normal border-b-2 border-neutral-900 relative">
+            {renderProvenanceTag("illustration")}
             <div className="text-neutral-500 font-bold border-b border-neutral-900 pb-1.5 flex justify-between">
               <span>PODFLOW SYSTEM // digest-daemon</span>
               <span className="text-emerald-400 font-black">ACTIVE</span>
@@ -235,7 +257,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <div className="text-[7.5px] leading-tight text-neutral-500">
                 [22:42:00] SQLITE: Reading Apple Podcasts library...<br />
                 [22:42:01] BATCH: Found 3 new episodes to process<br />
-                [22:42:03] LLM: Summarising "AI Agents in Production" (score: 94)<br />
+                {'[22:42:03] LLM: Summarising "AI Agents in Production" (score: 94)'}<br />
                 [22:42:05] OUTPUT: Written 3 new digests to podflow-digest.md
               </div>
             </div>
@@ -295,13 +317,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
           
+          {/* Internal case-file link */}
+          <Link
+            href={`/projects/${project.id}`}
+            className="font-mono text-[10px] uppercase tracking-widest font-bold text-tap-raspberry hover:underline"
+          >
+            Read the case file →
+          </Link>
+
           {/* Backlink CTA button */}
           <div>
             {project.liveUrl ? (
               <a 
                 href={project.liveUrl} 
                 target="_blank" 
-                rel="dofollow" 
+                rel="noopener"
                 className="inline-block w-full text-center py-2.5 text-xs font-mono border-2 border-neutral-900 text-neutral-900 bg-white hover:bg-neutral-50 transition-all font-bold shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_rgba(0,0,0,1)]"
               >
                 ➔ VISIT LIVE SITE
@@ -310,7 +340,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               <a 
                 href={project.githubRepos[0]} 
                 target="_blank" 
-                rel="dofollow" 
+                rel="noopener"
                 className="inline-block w-full text-center py-2.5 text-xs font-mono border-2 border-neutral-900 text-neutral-650 bg-neutral-50 hover:bg-neutral-100 transition-all font-bold shadow-[2px_2px_0px_rgba(0,0,0,1)] active:translate-x-[1px] active:translate-y-[1px] active:shadow-[1px_1px_0px_rgba(0,0,0,1)]"
               >
                 ➔ VIEW SOURCE CODE

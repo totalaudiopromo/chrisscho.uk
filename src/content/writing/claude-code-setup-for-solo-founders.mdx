@@ -1,0 +1,32 @@
+export const meta = {
+  title: "Setting Up Claude Code for a Solo Founder",
+  description:
+    "The Claude Code configuration that lets one person run nine production systems: project memory, custom skills, MCP servers, and the guardrails that make it safe.",
+  date: "2026-07-15",
+  tags: ["claude-code", "mcp", "setup"],
+};
+
+I run a solo company with nine production systems — a campaign platform, a playlist validator, a self-running news daemon, CLIs, and this site. The leverage that makes that possible is not typing speed. It's a properly configured Claude Code environment.
+
+## Stock Claude Code vs. a configured environment
+
+Out of the box, Claude Code is a very good pair programmer. The transformation happens in configuration:
+
+- **Project memory (`CLAUDE.md`)** — every repo carries its own operating manual: conventions, gotchas, deploy steps. The agent reads it before touching code, so you stop re-explaining your stack every session.
+- **Custom skills** — repeatable workflows (release checklists, data-cleanup passes, report generation) packaged as slash commands. The difference between "asking an assistant" and "operating a system."
+- **MCP servers** — the Model Context Protocol connects the agent to your actual business: Gmail, your database, Notion, your CRM. This is where it stops being a coding tool and becomes an operations layer.
+- **Hooks and permission rules** — pre-commit hooks that run your linters and tests automatically, and permission boundaries so the agent asks before anything destructive.
+
+## The guardrails are the setup
+
+Most botched agent setups fail on safety, not capability. The configuration that matters:
+
+1. Spend caps and model selection per task — small models for mechanical work, frontier models for architecture.
+2. Permission rules that require explicit approval for deletes, pushes, and anything touching production.
+3. Hooks that make quality checks non-optional — the agent can't skip the linter because it's feeling confident.
+
+## Where to start
+
+If you're technical, start with `CLAUDE.md` files and one MCP server for the system you touch most — usually email or your database. The compounding starts immediately.
+
+If you'd rather have the whole environment installed, hardened, and tuned to your workflow in a week — that's the [Claude Code setup service](/services/claude-code-setup), a flat-rate engagement based on the exact configuration I use daily. For the fuller stack (always-on agents, knowledge base grounding, monitoring), see [full AI infrastructure](/services/full-ai-infrastructure).

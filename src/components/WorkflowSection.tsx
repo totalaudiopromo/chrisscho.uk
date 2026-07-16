@@ -87,7 +87,7 @@ export default function WorkflowSection({ workflows }: WorkflowSectionProps) {
                 </span>
               </div>
               <div className="space-y-3">
-                <div className="text-neutral-400">// Observer Environment</div>
+                <div className="text-neutral-400">{"// Observer Environment"}</div>
                 <div className="grid grid-cols-3 border-b border-neutral-200 pb-2">
                   <span className="text-neutral-550 font-semibold">VAR</span>
                   <span className="text-neutral-800 col-span-2 font-bold">VALUE</span>
@@ -106,7 +106,7 @@ export default function WorkflowSection({ workflows }: WorkflowSectionProps) {
                 </div>
                 
                 <div className="border-t border-neutral-300 pt-4 mt-2">
-                  <div className="text-neutral-500 mb-1.5">// Console summary</div>
+                  <div className="text-neutral-500 mb-1.5">{"// Console summary"}</div>
                   <p className="text-neutral-700 leading-relaxed bg-[#F5F2EB] p-3 border border-neutral-300 rounded-none font-mono text-[10px]">
                     {flow.terminalSummary}
                   </p>

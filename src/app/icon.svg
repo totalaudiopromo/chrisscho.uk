@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#FAF9F6"/>
+  <rect x="3" y="3" width="58" height="58" fill="none" stroke="#171717" stroke-width="4"/>
+  <rect x="10" y="38" width="44" height="16" fill="#ee005a"/>
+  <text x="32" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="26" font-weight="bold" fill="#171717" text-anchor="middle">CS</text>
+  <text x="32" y="50.5" font-family="'Courier New', monospace" font-size="9" font-weight="bold" fill="#FAF9F6" text-anchor="middle" letter-spacing="1">SYS-ARCH</text>
+</svg>

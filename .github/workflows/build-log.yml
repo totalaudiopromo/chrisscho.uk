@@ -1,0 +1,41 @@
+# The agent behind /log: every Monday it summarizes the week's real
+# commits across the org into a changelog entry and commits it back.
+# The push triggers a Vercel deploy, so the page updates itself.
+# This file is linked from /log as provenance.
+name: build-log-agent
+
+on:
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  write-log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate weekly log entry
+        env:
+          GH_ORG_READ_TOKEN: ${{ secrets.GH_ORG_READ_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: node scripts/build-log-agent.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "build-log-agent"
+          git config user.email "actions@github.com"
+          git add src/content/log src/config/fallback/githubSnapshot.json
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "log: weekly build-log entry (automated)"
+            git push
+          fi

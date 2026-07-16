@@ -257,7 +257,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
           {Object.entries(scripts).map(([key, script]) => (
             <button
               key={key}
-              onClick={() => setActiveTab(key as any)}
+              onClick={() => setActiveTab(key as keyof typeof scripts)}
               className={`p-3 text-left border-2 border-neutral-900 transition-all font-bold rounded-none flex flex-col justify-between shrink-0 min-w-[145px] lg:min-w-0 lg:w-full ${
                 activeTab === key
                   ? 'bg-tap-accent text-white shadow-[3px_3px_0px_rgba(1,38,65,1)] translate-x-[-1px] translate-y-[-1px]'
