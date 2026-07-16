@@ -1,0 +1,41 @@
+export const meta = {
+  title: "How This Site Writes Its Own Changelog",
+  description:
+    "A weekly GitHub Action fetches my real commits, hands them to Claude with a strict no-invention prompt, and commits a changelog entry back to the repo. Here's the full architecture.",
+  date: "2026-07-16",
+  tags: ["agentic", "claude", "github-actions"],
+};
+
+Most portfolio sites claim their owner "builds AI agents." This one proves it structurally: the [build log](/log) on this site is written by an agent, on a schedule, from real commit data — and the whole pipeline is public.
+
+## The problem with portfolio claims
+
+A portfolio is a pile of assertions. "I ship weekly." "I automate operations." A visitor can't verify any of it, so the claims compress to noise. The fix isn't better copy — it's making the site itself an artifact of the systems it describes.
+
+## The architecture
+
+The pipeline is three components, all visible in [the repo](https://github.com/totalaudiopromo/chrisscho.uk):
+
+1. A GitHub Action on a Monday-morning cron
+2. A Node script that fetches the week's commits across my GitHub org
+3. A Claude API call that turns those commits into a short, factual changelog entry
+
+The output is a JSON file committed straight back to the repository. That commit triggers a Vercel deploy, so the [/log page](/log) — a fully static page — updates itself with zero runtime infrastructure. No database, no KV store, no cron server. Git is the database.
+
+```
+cron (Mon 07:00 UTC)
+  └─ fetch last 7 days of commits (GitHub REST)
+      └─ Claude: summarize, strict no-invention prompt
+          └─ commit src/content/log/2026-W29.json
+              └─ push → Vercel builds → /log updates
+```
+
+## The part that matters: constraining the model
+
+The interesting engineering isn't calling the API — it's the prompt contract. The agent receives only the commit list and is instructed to summarize *nothing beyond it*: no inferred features, no invented progress, no marketing language. If a week has three boring dependency bumps, the log says so. An agent whose output you can't trust is a liability wearing a novelty hat.
+
+The same principle runs the rest of this site: the hero terminal replays real commits from the GitHub API, and the status banner genuinely pings my production sites and reports real response times — including failures.
+
+## Why this is the pitch
+
+This pipeline is a miniature of what I build for clients: scheduled agents, strict output contracts, no-surprise failure modes, and infrastructure that costs pennies. If you want this pattern applied to your operations — reporting, digests, monitoring — that's exactly what the [agentic workflow consulting](/services/ai-agentic-workflow-consulting) engagement covers.

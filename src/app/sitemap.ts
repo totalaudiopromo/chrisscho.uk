@@ -2,8 +2,9 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "../lib/jsonld";
 import { portfolioProjects } from "../config/portfolioConfig";
 import { services } from "../config/services";
+import { getAllPosts } from "../lib/posts";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE_URL}/projects`, changeFrequency: "monthly", priority: 0.8 },
@@ -24,5 +25,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...staticRoutes, ...projectRoutes, ...serviceRoutes];
+  const posts = await getAllPosts();
+  const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
+    url: `${SITE_URL}/writing/${post.slug}`,
+    lastModified: post.date,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...postRoutes];
 }
