@@ -23,7 +23,11 @@ hours/week of savings are found within 30 days.**
 | 1. Discovery | 45-min call, recorded with an AI note-taker (Fathom/Granola). Probe where time goes; save every prescription for the report, don't give it away live. | `discovery-questions.md` |
 | 2. Analysis | Drop the transcript into Claude. Surface 5–7 pain points, prescribe off-the-shelf tools, sanity-check fit, map to effort/impact + hours saved. | `analysis-prompt.md` |
 | 3. Report | Fill the branded template — exec summary, effort-vs-impact matrix, tool cards, 4-day quick-start, ROI. Keep it stupid-simple. | `report/` |
-| 4. Review call | 30-min screen-share walkthrough. Close with the 3 upsell questions. | `review-call.md` |
+| 4. Review call | Email the report ahead, then a 30-min screen-share walkthrough. Close with the 3 upsell questions. | `review-call.md` |
+
+Upsell menu + AI Concierge retainer operations (intake form, call-1 onboarding, AOA loop,
+post-call automation, Notion hub renewal mechanism): `upsells-and-concierge.md`.
+Full episode transcript: `source-transcript.txt`.
 
 ## How to run it (Claude Code operator flow)
 

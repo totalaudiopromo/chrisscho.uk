@@ -13,10 +13,12 @@ Ranked by speed-to-first-£750 for Chris specifically. Do method 1 first.
 Chris already knows music-industry people through Liberty, artists worked with, and 4 years of
 promo. Offer a free 20-minute mini-audit → prescribe one tool → upsell the £750 full audit.
 
-**Text/DM script (warm):**
-> [Name] — I've been building AI systems to cut the admin out of running music businesses. I'm
-> doing a few free 20-minute workflow reviews to sharpen the offer: I look at where your week goes
-> and tell you one or two things you could automate this month. No pitch, no charge. Want one?
+**Text/DM script (warm — Corey's field-tested version, adapted):**
+> [Name] — I'm getting into the AI services world. I'd love to spend 15 minutes with you, free of
+> charge, and show you one way AI could benefit your business. Open to that?
+
+The "worst case" framing if they hesitate (Greg's line): worst case you learn one or two tools
+you'd never heard of; best case you've found a partner for all the AI stuff on your to-do list.
 
 On the call: find one obvious time-sink, prescribe one off-the-shelf tool, then: *"If that was
 useful, the full audit maps 5–7 of these with a report and a 4-day plan — £750, and I refund it if
@@ -39,6 +41,13 @@ the clients; many get asked about AI and have no answer.
 
 Offer a clear cut (e.g. 10–15% of the audit, or of the build). This is a sales team without hiring.
 
+**Follow-up cadence (Corey's): every 2–3 weeks**, with this exact text:
+> Any of your clients asked about AI lately? Would love to act as a resource. Happy to meet anytime.
+
+**Power move:** combine with a co-hosted event — Corey partnered with a plugged-in local realtor,
+ran the meetup in her office with her clients, and got a client from it. Chris's version: co-host
+an "AI for music businesses" session with a distributor, studio complex, or music accountant.
+
 ---
 
 ## 3. Office hours in a music community
@@ -49,6 +58,11 @@ naturally. Post a short "here's what we sorted this week" recap after each.
 
 Where: indie-label groups, artist-manager forums, music-production Discords, UK music-biz FB groups.
 
+The pitch to the space/community owner (Corey's, adapted): "You've got [N] members. I'd love to
+come in once a week for an hour and offer myself as a resource — free for them, exposure for you."
+Field result from his community: one member pitched 10 coworking spaces, 2 said yes, used door-knock
+plus £-gift-card incentives to fill the first session — 11 attendees, 2 follow-up calls booked.
+
 ---
 
 ## 4. Post wins on social (consistently)
@@ -58,7 +72,10 @@ one tool. Over time Chris becomes "the AI person for music businesses" and inbou
 
 - Routing: personal/build content → **@chrisschouk** and LinkedIn. TAP product content stays on
   **@totalaudiopromo**. (Standing rule.)
-- No fabricated wins. If the only win is free advice you gave, post that honestly.
+- No fabricated wins. If the only win is free advice you gave, post that honestly — Corey defines
+  a "win" down to "someone texted me a ChatGPT question and I gave a good answer."
+- A committed cadence beats sporadic brilliance: his example is one useful prompt/tip a day for
+  90 days. Chris's version: one "AI for music admin" tip a day, drafted in batches, voice-checked.
 - Cross-link: each post can point to `chrisscho.uk/audit`.
 
 ---
@@ -74,6 +91,12 @@ have real admin pain, small enough that the owner decides. Don't pitch in messag
 > day-to-day right now?
 
 **Message 2 (if they engage):** react to what they said, offer the free mini-audit (method 1 script).
+
+Upgrades from the episode: **voice messages and short Looms outperform text DMs** — Greg's hook
+suggestion is literally "I probably live down the street from you" (Chris's version: "I've spent
+four years pitching radio, so I know exactly where your week goes"). And persistence is the whole
+game: *"People do this for 3 days and quit. If you hang in there for 7 days, you're in the top
+0.001%."*
 
 Cadence: ~10–20 targeted messages/day. Within a week, 5–10 live conversations. All drafted for
 Chris to review and send.

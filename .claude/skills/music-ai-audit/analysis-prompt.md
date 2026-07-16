@@ -16,6 +16,11 @@ Current tools: [list]
 
 From the transcript, produce:
 
+0. THE THREE LEVERS — every recommendation must pull at least one: make them more money
+   (effectiveness), save them time (efficiency), or raise the quality of their product or service
+   (quality). Tag each prescription with its lever. The report's "Primary Focus" field is
+   whichever lever dominates.
+
 1. PAIN POINTS — the 5 to 7 biggest time-sinks and bottlenecks, ranked by hours/week lost.
    For each: a one-line description in the client's own words, and an estimate of hours/week lost.
 
@@ -37,8 +42,11 @@ From the transcript, produce:
 4. 4-DAY QUICK-START — the four highest-leverage tools, one per day, each installable in ~10 min,
    as a task the owner can do themselves.
 
-5. ROI — total weekly hours reclaimed, total monthly tool cost (£), and a plain monthly value
-   (hours × a sensible £/hour for their role). This must clear the 5-hours/week guarantee.
+5. ROI — Corey's exact formula: monthly net ROI = (weekly hours returned × their hourly rate × 4)
+   − monthly tool cost. Give total weekly hours reclaimed and total monthly tool cost (£)
+   separately too. Done right this lands in four figures monthly ("always four figures, sometimes
+   five"). It must clear the 5-hours/week guarantee; the benchmark averages are ~7 hours/week
+   found at ~£45/month of tools.
 
 6. WHAT COMES AFTER — 2–3 higher-effort, high-impact opportunities that are NOT off-the-shelf:
    custom automations I could build (speed-to-lead agent, contact-hygiene pipeline, release/
@@ -62,5 +70,15 @@ implementation opportunity, not a prescription.
 - Is anything music-specific better solved by a tool I know from running campaigns? Override Claude.
 - Does the "what comes after" list contain at least one thing I'd genuinely enjoy building? That's
   the upsell that funds the month.
+
+## Make this compound (Corey does exactly this)
+
+- After 2–3 audits, **turn this prompt into a proper Claude skill** and feed it the transcripts
+  AND finished reports from past audits as examples — "so Claude knows what good looks like."
+  By audit 4–6 the output is near copy-paste quality.
+- Tool directories: There's An AI For That; Futurepedia (note: acquired by HubSpot). Chris also
+  has his own map of music-specific tooling — that's the moat Corey doesn't have.
+- The size-fit rule in action: Claude once prescribed Salesforce to a 4-person landscaping firm.
+  Sub tools in and out by team size, every time.
 
 Output of this phase → feed into `report/README.md` to fill the deck.

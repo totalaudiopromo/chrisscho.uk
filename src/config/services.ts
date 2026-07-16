@@ -53,7 +53,7 @@ export const services: Service[] = [
       {
         question: "What's the money-back guarantee, exactly?",
         answer:
-          "If the report can't identify at least five hours a week of time savings for you within 30 days, you pay nothing. The average audit finds around six hours a week at roughly £40/month of tool cost, so it's a safe promise to make.",
+          "If the report can't identify at least five hours a week of time savings for you within 30 days, you pay nothing. The average audit finds around seven hours a week at roughly £45/month of tool cost, so it's a safe promise to make.",
       },
       {
         question: "Do I need to be technical, or already using AI?",

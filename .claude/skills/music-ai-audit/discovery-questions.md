@@ -1,12 +1,28 @@
 # Discovery call — question bank
 
-45 minutes, recorded with an AI note-taker (Fathom, Granola, or Otter). Goal: surface where the
-owner loses hours, **without giving away the prescriptions live** — those go in the report. Listen
-for repeated manual work, copy-paste, "I do this every week", and anything they dread.
+45 minutes, recorded with an AI note-taker (Fathom is Corey's; Granola/Otter/Fireflies work).
+Goal: surface where the owner loses hours, **without giving away the prescriptions live** — those
+go in the report. Corey's rule, verbatim: *"I have to bite my tongue and force myself not to
+prescribe on the first call. The first call is only for probing."* Listen for repeated manual
+work, copy-paste, "I do this every week", and anything they dread.
+
+The sweet-spot client is **2–20 employees** — big enough to have real bottlenecks, small enough
+that the owner decides.
 
 Open by setting the frame: *"I'm going to ask about how work actually moves through your week. The
 more honest you are about the annoying bits, the better the report. I'll send you a written plan
 with the specific tools afterwards."*
+
+## Corey's core six (use these verbatim — they work)
+
+1. **"Walk me through your day yesterday."** (concrete beats hypothetical)
+2. "What do you tend to do in a typical business day?"
+3. "What are tasks in your business that you dread doing?"
+4. "Where does your work pile up?"
+5. "What are things that you've tried to automate in the past and failed?"
+6. **The magic wand — his favourite:** *"If you could wave a magic wand and delete any process in
+   your business, what would that process be?"* The most common answer is email — which is
+   solvable, and often pays for the audit on its own.
 
 ## Base bank (any music business)
 

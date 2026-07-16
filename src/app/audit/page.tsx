@@ -120,7 +120,7 @@ export default function AuditPage() {
             full refund.
           </p>
           <p className="mt-3 text-sm text-neutral-300 max-w-2xl">
-            The average audit finds around six hours a week at roughly £40 a month in tool costs.
+            The average audit finds around seven hours a week at roughly £45 a month in tool costs.
             The maths is built to work heavily in your favour — which is exactly why I can make the
             promise.
           </p>

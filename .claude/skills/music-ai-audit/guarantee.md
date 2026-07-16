@@ -5,9 +5,17 @@
 > If I can't find you at least **5 hours a week** of time savings within **30 days**, you get a
 > **100% refund**.
 
-This is what makes £750 an easy yes at zero social proof. It is real and must be honoured. Notes:
+This is what makes £750 an easy yes at zero social proof. It is real and must be honoured.
 
-- The average audit finds ~6 hours/week and ~£40/mo of tool cost — the maths works heavily in the
+**The pitch, near-verbatim from Corey (adapt, don't dilute):**
+> We sit down for 45 minutes and do a structured interview. From that conversation I prescribe
+> three to seven off-the-shelf AI tools you can implement immediately to reclaim 5–10 hours a
+> week. And if I can't find at least 5 hours a week of opportunity, you get 100% of your money
+> back. The only thing you have to lose is 45 minutes of your time.
+
+Notes:
+
+- The average audit finds ~7 hours/week and ~£45/mo of tool cost — the maths works heavily in the
   client's favour, which is why the guarantee is safe to offer.
 - "Found" = prescribed in the report with a defensible hours estimate, not "you must have installed
   it". You control the deliverable; you don't control whether they act. Keep the language about what
@@ -21,7 +29,7 @@ This is what makes £750 an easy yes at zero social proof. It is real and must b
 
 | Offer | Price | Notes |
 | --- | --- | --- |
-| AI Workflow Audit | **£750** | First 2–3 clients at £250 or free, to build case studies. Corey's own path: free → £200 → £500 → £999. Higher price filters for clients who act. |
+| AI Workflow Audit | **£750** | First 2–3 clients at £250 or free, to build case studies. Higher price filters for clients who act — Corey's cheap clients implemented least. His rule: if you close ~100% of pitches, you're underpriced; raise on every yes. |
 | Implementation build | £2,000–£8,000 | Done-for-you. £750 credited. |
 | AI Concierge retainer | £900–£1,500/mo | 2×45-min calls + async. Roster cap 6. |
 
