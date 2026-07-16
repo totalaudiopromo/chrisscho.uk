@@ -1,14 +1,18 @@
 ---
 name: music-ai-audit
-description: Run a £750 AI Workflow Audit for a music business end-to-end — discovery call prep, transcript analysis into 3–7 off-the-shelf tool prescriptions, report generation from the branded template, review-call script, and the implementation/retainer upsell. Use when preparing for, running, or delivering an AI audit for a label, artist manager, music PR agency, studio, or self-releasing artist. Triggers: "run an audit", "prep the audit call", "analyse this discovery transcript", "build the audit report", "audit for [client]".
+description: Run a £750 AI Workflow Audit for any owner-run small business end-to-end — discovery call prep, transcript analysis into 3–7 off-the-shelf tool prescriptions, report generation from the branded template, review-call script, and the implementation/retainer upsell. Music businesses (label, manager, PR agency, studio, artist) are home turf; agencies, trades, professional services, and e-commerce are equally in scope. Triggers: "run an audit", "prep the audit call", "analyse this discovery transcript", "build the audit report", "audit for [client]".
 ---
 
-# Music AI Workflow Audit
+# AI Workflow Audit
 
 The productised lead offer for chrisscho.uk consulting. Adapted from Corey Ganim's $999 AI Tools
-Assessment (Startup Ideas Podcast, 15 Jul 2026) — repriced to **£750**, pointed at the **music
-industry**, and with implementation kept **in-house** (Chris builds the automations; the audit
-fee credits toward the build).
+Assessment (Startup Ideas Podcast, 15 Jul 2026) — repriced to **£750**, open to **any owner-run
+business of 2–20 people**, with the **music industry as the flagship specialism** (warmest
+network, strongest proof), and with implementation kept **in-house** (Chris builds the
+automations; the audit fee credits toward the build).
+
+Positioning rule: generic offer, music home turf. Never turn away a non-music audit; never
+dilute the music proof when pitching music businesses.
 
 ## The offer in one line
 

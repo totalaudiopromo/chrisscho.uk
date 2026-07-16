@@ -32,11 +32,12 @@ export default function Home() {
               [ NEW // AI WORKFLOW AUDIT ]
             </div>
             <h2 className="font-serif text-2xl md:text-3xl font-bold tracking-tight text-white leading-snug">
-              Running a music business? Find 5+ hours a week to reclaim — or your money back.
+              Find 5+ hours a week hiding in your business — or your money back.
             </h2>
             <p className="mt-2 text-sm text-neutral-300 leading-relaxed">
-              A fixed-price £750 audit for labels, managers, PR agencies, and studios: a 45-minute
-              call, a report of the tools that win your week back, and a guarantee.
+              A fixed-price £750 AI workflow audit for owner-run businesses: a 45-minute call, a
+              report of the tools that win your week back, and a guarantee. Music industry a
+              speciality.
             </p>
           </div>
           <Link

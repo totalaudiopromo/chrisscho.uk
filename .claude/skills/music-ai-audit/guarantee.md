@@ -39,7 +39,7 @@ Set these as required questions on the audit booking event so you walk in prepar
 
 1. Business name + website
 2. Which best describes you? (label / artist manager / music PR / studio-producer / self-releasing
-   artist / other)
+   artist / agency-consultancy / trades-local services / professional services / e-commerce / other)
 3. Team size (just me / 2–5 / 6–10 / 10+)
 4. Tools you're in every day (free text)
 5. The one task that eats the most time (free text)

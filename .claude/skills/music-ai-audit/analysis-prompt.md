@@ -7,10 +7,11 @@ systems). Never ship Claude's raw output to a client.
 ## The prompt
 
 ```
-You are helping me prepare a £750 AI Workflow Audit report for a music business. Below is the
-transcript of a 45-minute discovery call.
+You are helping me prepare a £750 AI Workflow Audit report for an owner-run small business.
+Below is the transcript of a 45-minute discovery call.
 
-Client: [name] — [business type: label / manager / PR agency / studio / self-releasing artist]
+Client: [name] — [business type: label / manager / PR agency / studio / artist / agency /
+trades / professional services / e-commerce / other]
 Team size: [N]
 Current tools: [list]
 
@@ -53,9 +54,12 @@ From the transcript, produce:
    metadata automation, reporting automation). These seed the implementation upsell — describe
    them, don't scope them yet.
 
-Music context to use: labels lose time on release ops, promo research, metadata, contact chasing;
-managers on scheduling, admin, contracts, forwarding; PR agencies on list-building, pitching,
-reporting; studios on booking, invoicing, client comms; artists on promo admin vs making music.
+Sector context to use — music (home turf): labels lose time on release ops, promo research,
+metadata, contact chasing; managers on scheduling, admin, contracts, forwarding; PR agencies on
+list-building, pitching, reporting; studios on booking, invoicing, client comms; artists on promo
+admin vs making music. General: agencies on proposals, reporting, and project admin; trades on
+slow enquiry response, quoting, and chasing payment; professional services on repeated documents
+and re-entered data; e-commerce on repetitive customer service and listings.
 
 Be concrete and honest. If a pain point has no good off-the-shelf fix, say so — that's an
 implementation opportunity, not a prescription.

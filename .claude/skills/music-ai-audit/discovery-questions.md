@@ -42,6 +42,9 @@ with the specific tools afterwards."*
 
 ## ICP-specific sets (add 5–10 for this client)
 
+Music sets first (home turf), then the general small-business sets. The base bank above works
+for any client.
+
 ### Indie label
 - How do you run a release, start to finish — briefs, assets, metadata, delivery?
 - How do you pitch to DSPs, playlists, press, radio? How much is manual research?
@@ -75,6 +78,34 @@ with the specific tools afterwards."*
 - DSP/playlist/press outreach — how do you do it now?
 - How do you keep track of contacts, submissions, and deadlines?
 - Social content — how much is manual, how far ahead are you?
+
+### Agency / consultancy
+- How do proposals and pitches get written? How much is reused vs from scratch?
+- Client reporting — how long does each report take, how often?
+- Project admin: status chasing, meeting notes, action tracking — who does it and how?
+- How do new leads come in, and how fast does someone respond?
+- Where do billable hours leak into unbillable admin?
+
+### Trades / local services
+- When an enquiry comes in (phone, web form, WhatsApp), what happens and how fast?
+- How do you quote? How long does a quote take, and how many do you lose to slow turnaround?
+- Scheduling and rescheduling jobs — how much back-and-forth?
+- Invoicing and chasing payment — how are they done, how much is outstanding right now?
+- Reviews and repeat business — do you follow up after a job?
+
+### Professional services (solicitors, accountants, brokers)
+- Which documents do you produce over and over? How much is template vs retyped?
+- Client onboarding — what does it take to get a new client fully set up?
+- How do client questions reach you, and how many are the same ten questions?
+- Deadline and compliance tracking — what's the system?
+- Where does data get re-entered between systems?
+
+### E-commerce / retail
+- Customer service emails — volume, and how many are the same five questions?
+- Product listings and descriptions — how are they written and updated?
+- Stock, orders, and accounting — how many systems, how much retyping?
+- Returns and refunds — what's the process?
+- Marketing content — how much time, how consistent?
 
 ## Close the call
 

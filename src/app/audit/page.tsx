@@ -9,27 +9,31 @@ import { services } from "../../config/services";
 // Swap to a dedicated event (e.g. .../ai-audit) once created in Cal.com.
 const BOOKING_URL = "https://cal.com/chris-schofield/advisory-discovery-call";
 
-const audit = services.find((s) => s.slug === "music-ai-audit")!;
+const audit = services.find((s) => s.slug === "ai-workflow-audit")!;
 
 export const metadata: Metadata = {
-  title: "AI Workflow Audit for Music Businesses — £750, money-back",
+  title: "AI Workflow Audit — £750, money-back guarantee",
   description:
-    "A fixed-price AI workflow audit for labels, artist managers, music PR agencies, and studios. Find 5+ hours a week to reclaim, or your money back. £750, built by a working radio promoter.",
+    "A fixed-price AI workflow audit for owner-run businesses. Find 5+ hours a week to reclaim, or your money back. £750. Music industry a speciality.",
   alternates: { canonical: "/audit" },
   openGraph: {
-    title: "AI Workflow Audit for Music Businesses",
+    title: "AI Workflow Audit for Small Businesses",
     description:
-      "Find 5+ hours a week hiding in your music business — or your money back. £750, fixed price.",
+      "Find 5+ hours a week hiding in your business — or your money back. £750, fixed price.",
     url: "/audit",
   },
 };
 
 const icps = [
-  { label: "Independent labels", note: "Release ops, promo research, metadata, contact chasing." },
-  { label: "Artist managers", note: "Scheduling, admin, contracts, forwarding, inbox load." },
-  { label: "Music PR agencies", note: "List-building, pitching, tracking, client reporting." },
-  { label: "Studios & producers", note: "Bookings, enquiries, invoicing, client comms, rebooking." },
-  { label: "Self-releasing artists", note: "Promo admin that eats the time you'd rather spend making music." },
+  {
+    label: "Music businesses",
+    note: "Labels, managers, PR agencies, studios, self-releasing artists. My home turf — four years of radio promotion behind the advice.",
+  },
+  { label: "Agencies & consultancies", note: "Client comms, reporting, proposals, project admin that eats billable hours." },
+  { label: "Trades & local services", note: "Enquiries answered too slowly, quoting, scheduling, invoicing, chasing payment." },
+  { label: "Professional services", note: "Solicitors, accountants, brokers — document-heavy workflows and overloaded inboxes." },
+  { label: "E-commerce & retail", note: "Customer emails, listings, stock admin, and the same data retyped between systems." },
+  { label: "Any owner-run team of 2–20", note: "Big enough to have real bottlenecks, small enough that you decide. If your week runs on email and spreadsheets, this works." },
 ];
 
 const phases = [
@@ -84,13 +88,13 @@ export default function AuditPage() {
           [ THE AI WORKFLOW AUDIT ]
         </div>
         <h1 className="font-serif text-4xl md:text-6xl font-bold tracking-tight text-neutral-950 leading-[1.02] max-w-3xl">
-          Find 5+ hours a week hiding in your music business — or your money back.
+          Find 5+ hours a week hiding in your business — or your money back.
         </h1>
         <p className="mt-6 text-base md:text-lg text-tap-text-secondary leading-relaxed max-w-2xl">
-          A fixed-price audit for labels, managers, PR agencies, and studios. I sit with you for 45
-          minutes, find where the week goes, and hand you the exact off-the-shelf tools to win it
-          back — built by someone who has spent four years doing radio promotion and shipped nine
-          production systems on the back of it.
+          A fixed-price audit for owner-run businesses. I sit with you for 45 minutes, find where
+          the week goes, and hand you the exact off-the-shelf tools to win it back — from someone
+          who builds and runs these systems every day, not a consultant reading from a slide deck.
+          Music industry a speciality; the framework works anywhere.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-4">
           <a
@@ -209,7 +213,8 @@ export default function AuditPage() {
               From £2,000 · £750 credited
             </div>
             <p className="mt-3 text-sm text-tap-text-secondary leading-relaxed">
-              Done-for-you builds — speed-to-lead agents, contact hygiene, release automation.
+              Done-for-you builds — speed-to-lead agents, workflow automation, data pipelines,
+              knowledge systems.
             </p>
           </div>
           <div className="border-2 border-neutral-900 bg-white p-6 shadow-[4px_4px_0px_rgba(0,0,0,1)]">
@@ -234,10 +239,11 @@ export default function AuditPage() {
             Why me
           </div>
           <p className="text-sm text-tap-text-secondary leading-relaxed max-w-3xl">
-            I&apos;m not an AI consultant who read about the music industry. I&apos;ve spent four years
-            doing radio promotion and shipped nine production systems because of it — a campaign
-            platform for PR agencies, a playlist validator, contact-hygiene tooling, and more. The
-            advice comes from someone who runs these workflows every day.{" "}
+            I&apos;m not a consultant who read about AI. I&apos;ve shipped nine production systems —
+            a campaign platform, a playlist validator, contact-hygiene tooling, automation daemons —
+            and I run my own company on the same agent infrastructure I&apos;d recommend to you. Four
+            years in music promotion means labels, studios, and agencies get advice from someone
+            who has done their actual job.{" "}
             <Link href="/projects" className="font-bold text-tap-raspberry hover:underline">
               See the shipped systems →
             </Link>

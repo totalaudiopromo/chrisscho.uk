@@ -24,17 +24,18 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    slug: "music-ai-audit",
+    slug: "ai-workflow-audit",
     name: "AI Workflow Audit",
-    title: "AI Workflow Audit for Music Businesses",
+    title: "AI Workflow Audit for Small Businesses",
     description:
-      "A fixed-price AI workflow audit for labels, managers, PR agencies, and studios: a 45-minute call, a report prescribing the tools to reclaim 5+ hours a week, and a review call. £750, or your money back.",
+      "A fixed-price AI workflow audit for owner-run businesses: a 45-minute call, a report prescribing the tools to reclaim 5+ hours a week, and a review call. £750, or your money back. Music industry a speciality.",
     priceRange: "£750 fixed · money-back guarantee",
     timeline: "Report in days · review call to follow",
     kicker: "[ SERVICE // 01 ]",
     intro: [
-      "Most music businesses are losing five to ten hours a week to admin that a handful of off-the-shelf tools would erase — inbox overload, chasing contacts, packaging releases, retyping the same data between apps. You don't need a bespoke build to fix that. You need someone who has done the job to sit with you for 45 minutes and tell you exactly which tools to install on Monday.",
+      "Most owner-run businesses are losing five to ten hours a week to admin that a handful of off-the-shelf tools would erase — inbox overload, chasing leads, retyping the same data between apps, invoicing, scheduling. You don't need a bespoke build to fix that. You need someone who ships this stuff daily to sit with you for 45 minutes and tell you exactly which tools to install on Monday.",
       "That's the audit. I map where your week actually goes, then hand you a plain report: the three-to-seven tools that will save you the most time, what each costs, how long it takes to set up, and a four-day plan to get them running. If I can't find you at least five hours a week back within 30 days, you get a full refund — I've built the offer so the maths works heavily in your favour.",
+      "I come from the music industry — four years of radio promotion and nine shipped systems on the back of it — so labels, studios, managers, and PR agencies are home turf. But the framework works for any business that runs on email, spreadsheets, and a busy owner: agencies, trades, professional services, e-commerce.",
     ],
     deliverables: [
       "A 45-minute discovery call mapping where your time actually goes",
@@ -48,7 +49,7 @@ export const services: Service[] = [
       {
         question: "How is this different from your other services?",
         answer:
-          "This is the front door. The audit finds the quick wins any music business can install themselves. If you'd rather have the deeper automations built for you — a speed-to-lead agent, contact-hygiene pipelines, release automation — that's the implementation build, and your £750 comes off the price.",
+          "This is the front door. The audit finds the quick wins any business can install themselves. If you'd rather have the deeper automations built for you — a speed-to-lead agent, data pipelines, workflow automation — that's the implementation build, and your £750 comes off the price.",
       },
       {
         question: "What's the money-back guarantee, exactly?",
@@ -58,12 +59,12 @@ export const services: Service[] = [
       {
         question: "Do I need to be technical, or already using AI?",
         answer:
-          "No. Most of the tools I prescribe take ten minutes to set up and need no technical knowledge. The whole point is that someone who runs campaigns and ships software translates it into plain, specific steps for your business.",
+          "No. Most of the tools I prescribe take ten minutes to set up and need no technical knowledge. The whole point is that someone who runs these systems daily translates it into plain, specific steps for your business.",
       },
       {
-        question: "Which music businesses is this for?",
+        question: "Who is this for?",
         answer:
-          "Independent labels, artist managers, music PR agencies, studios and producers, and self-releasing artists. The framework is the same; the questions and tools change to fit how you actually work.",
+          "Owner-run businesses of roughly two to twenty people — big enough to have real bottlenecks, small enough that the owner decides. Music businesses (labels, managers, PR agencies, studios, self-releasing artists) are my speciality, but the framework fits agencies, trades, professional services, and e-commerce just as well.",
       },
     ],
     relatedProjectIds: ["total-audio-promo", "spotcheck", "newsjack"],
