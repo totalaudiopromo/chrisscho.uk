@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# chrisscho.uk
 
-## Getting Started
+The personal site of **Chris Schofield** — AI agentic workflow consulting, custom
+multi-agent environment design, and automated systems engineering. Built as a
+living index of running systems rather than a static CV: the hero pulls real
+commit activity from GitHub, the status banner runs genuine server-side
+reachability checks against the live properties, and the build log writes itself.
 
-First, run the development server:
+Live at **[chrisscho.uk](https://chrisscho.uk)**.
+
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router, React 19, TypeScript)
+- **[Tailwind CSS v4](https://tailwindcss.com)** with a token-based design system (`src/app/globals.css`)
+- **MDX** for writing (`@next/mdx`) — posts live in `src/content/writing`
+- **[PostHog](https://posthog.com)** for privacy-conscious analytics
+- Editorial type: Outfit (sans), Instrument Serif (display), JetBrains Mono (mono) via `next/font`
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command         | Description                          |
+| --------------- | ------------------------------------ |
+| `npm run dev`   | Start the dev server                 |
+| `npm run build` | Production build                     |
+| `npm run start` | Serve the production build           |
+| `npm run lint`  | Lint with ESLint                     |
 
-## Learn More
+## Project layout
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/          Routes: home, audit, projects, services, writing, log (+ OG images, sitemap, robots)
+  components/   UI: Hero, StatusBanner, ProjectCard, WorkflowSection, SiteHeader/Footer, …
+  config/       Portfolio, services and workflow data + GitHub fallback snapshot
+  content/      MDX writing and the JSON build log
+  lib/          Server-side data: GitHub activity, uptime, posts, JSON-LD, OG helpers
+  assets/       Self-hosted display fonts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Live data & fallbacks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **GitHub activity** (`src/lib/github.ts`) hydrates the hero from the public
+  `totalaudiopromo` account and falls back to a checked-in snapshot
+  (`src/config/fallback/githubSnapshot.json`) when the API is unreachable. Set
+  `GITHUB_TOKEN` to lift the unauthenticated rate limit.
+- **Uptime** (`src/lib/uptime.ts`) pings the live properties server-side and
+  renders honest "no response" states rather than fake OKs.
+- **Build log** (`scripts/build-log-agent.mjs`) is regenerated weekly by a
+  GitHub Action and rendered at `/log`.
 
-## Deploy on Vercel
+## Optimising images
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Source screenshots are converted to `.webp` via:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+node scripts/optimize-images.mjs
+```
+
+## Deployment
+
+Deployed on Vercel. Pushes to the default branch ship to production.
