@@ -224,7 +224,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               src="/sadact_artwork.webp"
               alt="sadact mild peril EP artwork"
               fill 
-              sizes="(max-w-768px) 100vw, 33vw"
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover opacity-85"
             />
             <div className="absolute top-3 right-3 bg-neutral-900/90 text-white text-[8px] font-mono uppercase tracking-widest px-2 py-0.5 border border-neutral-700">
