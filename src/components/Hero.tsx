@@ -73,7 +73,7 @@ export default async function Hero() {
                 src="/chris-schofield-founder.webp"
                 alt="Chris Schofield - Founder Photograph"
                 fill
-                sizes="(max-w-768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 33vw"
                 priority
                 className="object-cover object-center grayscale contrast-[1.05] brightness-95"
               />
