@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import MobileNav from "./MobileNav";
 
 const navLinks = [
   { href: "/audit", label: "[ Audit ]" },
@@ -36,6 +37,7 @@ export default function SiteHeader() {
           >
             Consulting ↗
           </a>
+          <MobileNav links={navLinks} />
         </nav>
       </div>
     </header>
