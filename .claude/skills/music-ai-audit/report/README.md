@@ -29,7 +29,7 @@ page via the print stylesheet).
 
 Corey iterated this deck a dozen times to keep it clear. Rules:
 - One idea per slide. No walls of text. If a client can't grasp a slide in 10 seconds, cut words.
-- Real GBP numbers everywhere. The ROI slide must visibly clear the 5-hours/week guarantee.
+- Real GBP numbers everywhere. The ROI slide must visibly clear the 7-hours/week guarantee.
 - Every prescription is a tool Chris would install himself.
 - No fabricated benchmarks. Estimates are defensible or they don't go in.
 

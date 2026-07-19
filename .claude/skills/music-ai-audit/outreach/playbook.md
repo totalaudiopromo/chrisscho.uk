@@ -164,6 +164,18 @@ Target: one booked, paid audit inside the week.
 - One win posted.
 - Every completed audit → ask for a referral + (with permission) a case study.
 
+## Scaling: the self-liquidating funnel (later, not now)
+
+The seven methods above are deliberately zero-capital — the right footing while the offer is
+unproven. But once audits convert reliably (a repeatable close rate, reports that land, a couple of
+case studies), Greg's "vending machine" move opens up: take a slice of each £750 — he suggests
+~£200 — and reinvest it into paid acquisition (LinkedIn, Meta, or music-trade placements). When an
+audit that costs £X in ads to book earns more than £X back, the funnel pays for its own growth and
+the upsells are profit on top. **Do not start here** — paid traffic before the offer converts just
+burns money faster. Trigger this only once the organic methods are producing booked, paid audits
+predictably. Standing rule still applies: any ad spend is Chris's call, and every ad and landing
+page is drafted for his approval before it runs.
+
 ## Guardrails
 
 - Draft only. Chris approves and sends every message. No armed sequences, no auto-send.

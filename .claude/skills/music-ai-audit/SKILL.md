@@ -36,8 +36,8 @@ Full episode transcript: `source-transcript.txt`.
 
 ## How to run it (Claude Code operator flow)
 
-1. **Booked audit** → read `intake.md`, confirm business type + team size + current tools from the
-   Cal.com booking answers.
+1. **Booked audit** → read the intake section in `guarantee.md`, confirm business type + team size +
+   current tools from the Cal.com booking answers.
 2. **Prep** → open `discovery-questions.md`, assemble the base bank + the ICP-specific set for this
    client (label / manager / PR / studio / artist). Chris runs the call.
 3. **After the call** → feed the transcript with `analysis-prompt.md`. Chris reviews the tool fit
