@@ -30,6 +30,12 @@ I have two other calls this week with people interested."*
 **Pricing:** raise it every time someone says yes. His actual sequence: $1,200 → $1,500 → $1,500
 → $1,800 → $2,000. If you close everyone, you're underpriced. Chris starts at £900 and ratchets.
 
+**Make the scarcity public (Greg's tactic).** The roster cap is real; put it on the offer page as
+tiered spots so a browser feels the urgency without a sales call: e.g. *"4 spots at £900/mo, then
+£1,200, then the last 2 at £1,500."* Two effects — it does the ratchet automatically as spots
+fill, and it lets a price-sensitive client self-select the cheaper tier now rather than stall.
+The published tiers must match the true cap of 6; don't invent scarcity that isn't there.
+
 **Pre-engagement intake (form, required before call 1):** business basics, role, time
 in-vs-on the business, main time sinks, tools in use, and the anchor question — **"90 days from
 now, what would make this engagement feel like a win?"** Get a specific, measurable answer; it
@@ -62,6 +68,17 @@ once each in 2.5 months) but very high perceived value. Promise it confidently.
 
 **Result benchmark:** 4 of his 5 clients hit their 90-day win by day 60. $8K MRR in 10 days,
 5 of the first 6 pitches closed.
+
+## The rung above the concierge (there's always an upsell to the upsell)
+
+Greg's point: a services ladder never has to top out. Once the roster is full and a concierge
+client has plainly outgrown two calls a month, there's a more premium rung — a bespoke,
+higher-touch engagement (fractional-AI-lead, a bigger build programme, £4k+/mo) for the one or two
+clients who'd happily pay for it. Don't build it early or chase it — focus is the whole point of
+the ladder. The mechanism is bandwidth, not hustle: when a client churns and a seat frees, that's
+the moment to offer the premium tier to your strongest remaining client rather than simply
+back-filling the cap at the old price. Keep it a note-to-self for now; it becomes real once the
+concierge roster is consistently full.
 
 ## Delivering MORE value than Corey does (Chris's edge)
 

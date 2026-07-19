@@ -7,7 +7,12 @@ prescribe on the first call. The first call is only for probing."* Listen for re
 work, copy-paste, "I do this every week", and anything they dread.
 
 The sweet-spot client is **2–20 employees** — big enough to have real bottlenecks, small enough
-that the owner decides.
+that the owner decides. Corey qualifies on a second axis too: **~£400k–£4M/year in revenue**
+(his $500k–$5M band in GBP). Use it as a directional filter, not a hard gate — a lean 2-person
+shop turning over £1M is a better audit client than a 15-person one doing £150k, because they can
+afford the upsells and the guarantee is easier to hit. Music businesses often run leaner than
+Corey's trades-and-services clients, so treat the floor as a signal, not a cut-off: a healthy
+owner-run label or studio that can comfortably absorb £750 qualifies even below the band.
 
 Open by setting the frame: *"I'm going to ask about how work actually moves through your week. The
 more honest you are about the annoying bits, the better the report. I'll send you a written plan
