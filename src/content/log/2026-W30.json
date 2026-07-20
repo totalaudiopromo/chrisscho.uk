@@ -1,0 +1,32 @@
+{
+  "week": "2026-W30",
+  "dateRange": "2026-07-13 → 2026-07-20",
+  "summary": "totalaud.io shipped a major feature sprint covering mobile redesign, beta access controls, streaming CSV import, and artist-focused landing page updates. chrisscho.uk got portfolio polish with mobile nav, responsive images, and an AI Workflow Audit offer page. Minor releases and fixes across audx and tap-cli.",
+  "highlights": [
+    {
+      "repo": "totalaud.io",
+      "text": "Completed roadmap items for streaming stats CSV import and Gmail pitch sending, plus shipped app-level beta access guard and mobile-first workspace redesign."
+    },
+    {
+      "repo": "chrisscho.uk",
+      "text": "Added mobile navigation, fixed responsive image sizing, and launched AI Workflow Audit offer targeting owner-run music businesses with 7+ hours weekly time savings."
+    },
+    {
+      "repo": "audx",
+      "text": "Released correctness fixes and cross-platform path handling."
+    },
+    {
+      "repo": "tap-cli",
+      "text": "Migrated all commands to REST v1 API in v0.3.1."
+    }
+  ],
+  "commitCount": 43,
+  "reposTouched": [
+    "totalaud.io",
+    "chrisscho.uk",
+    "audx",
+    "tap-cli"
+  ],
+  "generatedBy": "claude-haiku-4-5-20251001 via GitHub Actions",
+  "generatedAt": "2026-07-20T08:05:47.353Z"
+}

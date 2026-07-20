@@ -1,83 +1,87 @@
 {
   "commits": [
     {
-      "repo": "chrisscho.uk",
-      "message": "fix(build-log): totalaudiopromo is a user not an org — use /users/{name}/repos",
-      "sha": "2c85f92",
-      "date": "2026-07-16T13:12:48Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "Portfolio polish: live data showcase, multi-page SEO expansion, agent-written build log (#1)",
-      "sha": "10a7638",
-      "date": "2026-07-16T13:09:57Z"
-    },
-    {
-      "repo": "tap-cli",
-      "message": "feat: v0.3.1 — migrate all commands to REST v1 API (#2)",
-      "sha": "fc81a8b",
-      "date": "2026-07-16T12:38:29Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "style: fixed text contrast on solopreneur code window",
-      "sha": "5895a71",
-      "date": "2026-07-15T15:12:39Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "asset: replaced onboarding placeholder with live totalaud.io landing screenshot",
-      "sha": "8dd7e49",
-      "date": "2026-07-15T15:10:52Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "feat: replaced mock CSS divs with real landing screenshots and scroll translation",
-      "sha": "c749416",
-      "date": "2026-07-15T15:05:37Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "feat: replaced static screenshots with fully interactive CSS dashboards",
-      "sha": "eb7e019",
-      "date": "2026-07-15T15:02:32Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "fix: corrected image source path in Hero.tsx",
-      "sha": "a107474",
-      "date": "2026-07-15T14:53:55Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "style: optimized mobile responsiveness, swipeable tabs, and layout stability",
-      "sha": "2e6e25d",
-      "date": "2026-07-15T14:50:14Z"
-    },
-    {
-      "repo": "chrisscho.uk",
-      "message": "initial commit: SEO optimized chrisscho.uk portfolio",
-      "sha": "7437fdd",
-      "date": "2026-07-14T21:53:07Z"
+      "repo": "totalaud.io",
+      "message": "chore: bump CLAUDE.md last-updated; redeploy applies BETA_ALLOWLIST (#145)",
+      "sha": "1c587e8",
+      "date": "2026-07-19T22:32:13Z"
     },
     {
       "repo": "totalaud.io",
-      "message": "feat(label): Label OS workspace for independent labels (#125)",
-      "sha": "68c2cf4",
-      "date": "2026-07-12T00:01:02Z"
+      "message": "fix(timeline): mobile-honest tip copy and labelled toolbar buttons (#143)",
+      "sha": "1b81efc",
+      "date": "2026-07-19T22:18:15Z"
     },
     {
-      "repo": "podflow",
-      "message": "feat: optimize website for AI overview search indexing and visibility",
-      "sha": "95d2129",
-      "date": "2026-07-10T05:44:44Z"
+      "repo": "totalaud.io",
+      "message": "fix: mobile timeline, TAP/token errors, and an agentic Deep Dive that sets up the workspace (#141)",
+      "sha": "a18ca05",
+      "date": "2026-07-19T20:41:18Z"
+    },
+    {
+      "repo": "totalaud.io",
+      "message": "fix(mobile): touch-first redesign of workspace interactions (#139)",
+      "sha": "1b893e0",
+      "date": "2026-07-19T15:17:38Z"
+    },
+    {
+      "repo": "totalaud.io",
+      "message": "feat(auth): app-level beta access guard (ships on) (#140)",
+      "sha": "09afc94",
+      "date": "2026-07-19T13:22:31Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "docs: close gaps in AI audit playbook after source re-review (#3)",
+      "sha": "a745408",
+      "date": "2026-07-19T13:12:58Z"
+    },
+    {
+      "repo": "totalaud.io",
+      "message": "feat(waitlist): send Resend confirmation and remove Kit (#138)",
+      "sha": "da853de",
+      "date": "2026-07-19T11:55:41Z"
+    },
+    {
+      "repo": "audx",
+      "message": "Polishing pass: correctness fixes, cross-platform paths, dev-tooling cleanup (#6)",
+      "sha": "1d65970",
+      "date": "2026-07-19T10:54:52Z"
+    },
+    {
+      "repo": "totalaud.io",
+      "message": "feat: streaming stats CSV import and Gmail pitch sending — the last two roadmap items (#137)",
+      "sha": "3bd37b5",
+      "date": "2026-07-18T16:20:47Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "Merge pull request #2: site polish — mobile nav, image sizes fix, README",
+      "sha": "587da3a",
+      "date": "2026-07-18T16:01:49Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "perf(agentic-engines): drop unnecessary use client directive",
+      "sha": "676dc3a",
+      "date": "2026-07-18T16:00:56Z"
+    },
+    {
+      "repo": "chrisscho.uk",
+      "message": "fix(images): correct malformed responsive image sizes attribute",
+      "sha": "6e7e927",
+      "date": "2026-07-18T16:00:56Z"
     }
   ],
   "repoCount": 11,
   "languages": [
     {
       "name": "TypeScript",
-      "pct": 91
+      "pct": 85
+    },
+    {
+      "name": "Python",
+      "pct": 8
     },
     {
       "name": "PLpgSQL",
@@ -88,13 +92,9 @@
       "pct": 1
     },
     {
-      "name": "JavaScript",
-      "pct": 1
-    },
-    {
-      "name": "CSS",
+      "name": "Shell",
       "pct": 1
     }
   ],
-  "fetchedAt": "2026-07-16T13:13:07.167Z"
+  "fetchedAt": "2026-07-20T08:05:43.604Z"
 }
