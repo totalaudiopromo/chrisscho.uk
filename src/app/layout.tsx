@@ -5,6 +5,7 @@ import JsonLd from "../components/JsonLd";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 import { personSchema, professionalServiceSchema, SITE_URL } from "../lib/jsonld";
+import { Analytics } from "@vercel/analytics/next";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -85,6 +86,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-grow">{children}</main>
         <SiteFooter />
+        <Analytics />
       </body>
     </html>
   );
