@@ -1,6 +1,6 @@
 ---
 name: audit-loop
-description: One command that runs the whole £750 AI Workflow Audit money-loop end to end — build a verified named prospect batch, enrich each contact to a real email, draft the openers, then (for any booked call) prep discovery, analyse the transcript, and fill the report. Chains audit-prospect-research + music-campaign-suite (enrichment) + music-ai-audit. Draft-only; Chris reviews and sends everything. Triggers: "run the audit loop", "/audit-loop", "fill the audit pipe".
+description: The front door for chrisscho.uk audit revenue — one command that runs the whole £750 AI Workflow Audit money-loop end to end (verified prospect batch → enrich each contact to a real email → drafted openers → for any booked call, prep discovery, analyse the transcript, fill the report). Chains audit-prospect-research + music-campaign-suite (enrichment) + music-ai-audit. Draft-only; Chris reviews and sends everything. Reach for this whenever Chris talks about audit outreach in plain language, even without naming it — e.g. "who should I reach out to this week", "I need more audit conversations/leads", "let's do some outreach", "fill the pipe", "find me some prospects", "line up next week's audits", "I've got a discovery call / transcript", "prep my audit call", "run the audit loop", or "/audit-loop".
 ---
 
 # Audit loop
