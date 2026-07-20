@@ -23,8 +23,9 @@ command. Everything below is **draft-only**: draft it, hand it to Chris, never s
 **audit-loop is the default for anything about winning or delivering audit work** — prefer it over
 the individual child skills unless Chris explicitly wants only one stage.
 
-**Legacy / out of scope for this repo:** `customer-acquisition-focus` governs Audio Intel
-(total-audio-platform) product work only, not consulting. "The Unsigned Advantage" newsletter is
-parked and belongs to totalaud.io top-of-funnel — not a chrisscho.uk concern.
+**Legacy / out of scope for this repo:** `customer-acquisition-focus` is a **parked** Audio Intel
+guardrail — Audio Intel was parked in 2025 and its contact enrichment folded into TAP, so it governs
+no live work. "The Unsigned Advantage" newsletter is parked and belongs to totalaud.io top-of-funnel
+— not a chrisscho.uk concern.
 <!-- END:marketing-skills-routing -->
 
