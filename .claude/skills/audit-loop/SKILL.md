@@ -30,11 +30,10 @@ where found, size estimate, fit score, pain signal, draft opener, status.
 
 Stage 1 leaves some rows as `contact: unknown` or with a name but no address — and the research
 skill's own rule is that info@/hello@ almost never reply. Feed those rows through the
-`music-campaign-suite` enrichment — **Audio Intel**, Chris's own live contact-enrichment tool inside
-TAP (web-scrape fallback if it can't resolve one) — to get a named person's email, and dedupe. This
-is the join that makes the openers actually reach a human. Mark each row `email: found / not found`;
-a `not found` row stays in the batch flagged for manual look-up, never dropped silently. Dogfooding
-Audio Intel here is deliberate — it's the same enrichment Chris sells (£5–£80/mo).
+`music-campaign-suite` enrichment — TAP's own contact-enrichment capability, with a web-scrape
+fallback — to get a named person's email, and dedupe. This is the join that makes the openers
+actually reach a human. Mark each row `email: found / not found`; a `not found` row stays in the
+batch flagged for manual look-up, never dropped silently.
 
 ## Stage 3 — Deliver a booked audit (music-ai-audit)
 
