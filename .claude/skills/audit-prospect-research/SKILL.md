@@ -1,6 +1,6 @@
 ---
 name: audit-prospect-research
-description: Build verified, named prospect lists for the £750 AI Workflow Audit (chrisscho.uk/audit) using Perplexity + web verification, and draft openers for Chris to review. Two tracks — UK music businesses and Brighton/Sussex local businesses. Draft-only; Chris sends everything.
+description: Build verified, named prospect lists for the £750 AI Workflow Audit (chrisscho.uk/audit) using Perplexity + web verification, and draft openers for Chris to review. Two tracks — UK music businesses and Brighton/Sussex local businesses. Draft-only; Chris sends everything. The prospecting stage of the audit money-loop — for a full prospect→enrich→deliver pass use audit-loop; reach here directly when Chris wants just a batch, e.g. "build me a prospect batch", "refresh the prospect list", "find named [sector] contacts".
 ---
 
 # Audit prospect research
