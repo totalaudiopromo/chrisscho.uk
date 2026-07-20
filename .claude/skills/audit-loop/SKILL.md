@@ -48,6 +48,10 @@ Only runs when there is a booked call or a transcript. For each:
 If there is no booked call this week, Stage 3 is skipped and the loop ends after Stage 2 with the
 enriched, drafted batch ready to send.
 
+**After a delivered audit:** offer to run `case-study` on it — a completed audit is proof, and its
+one-line snippet feeds back into Stage 1's openers, warming the next batch. This is what makes the
+loop compound rather than reset each week.
+
 ## How to run it
 
 1. `/audit-loop` with no argument → track A, next sector in rotation, Stages 1–2, plus Stage 3 for
