@@ -109,6 +109,10 @@ have real admin pain, small enough that the owner decides. Don't pitch in messag
 
 **Message 2 (if they engage):** react to what they said, offer the free mini-audit (method 1 script).
 
+**More opener patterns:** `openers.md` in this folder — a fuller bank (observation, audit-offer,
+value-first, hours-back, two-line, voice-note, proof-drop) plus a calm three-touch follow-up, for
+methods 5 and 7.
+
 Upgrades from the episode: **voice messages and short Looms outperform text DMs** — Greg's hook
 suggestion is literally "I probably live down the street from you" (Chris's version: "I've spent
 four years pitching radio, so I know exactly where your week goes"). And persistence is the whole
