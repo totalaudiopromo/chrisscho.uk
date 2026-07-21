@@ -94,12 +94,14 @@ Access is via the `obsidian-cli` skill (the `obs` command) and `obsidian-markdow
 notes. Typical reads: `obs search query="<prospect>" limit=10`, `obs read file="<note>"`,
 `obs files folder="03-contacts"`. **Writes to the vault gate on Chris** — the vault IS Chris.
 
-**The one constraint (be honest about it):** `obs` talks to a *running Obsidian instance over IPC*,
-so the vault is reachable only when Chris runs `home`/the engines **locally on his Mac**. In a
-remote/web session there's no Obsidian and no `~/vault/` — the vault is unavailable. If an engine
-needs vault data in a remote session, say so plainly and fall back to web research (or, if the vault
-is mirrored to a git repo, that repo can be added to the session as the remote read path). Never
-fabricate vault contents.
+**Two access modes (see `vault-access.md` for the full protocol + path map):**
+- **Local** — `obs` CLI to a running Obsidian, when Chris runs on his Mac. Supports gated writes.
+- **Remote/web** — no Obsidian, so read the vault from its git mirror, the **`totalaudiopromo/vault`**
+  repo (add it to the session, read-only via Grep/Read). Prospect intel lives in `03-contacts/` +
+  `06-business/sales-outreach/`; transcripts in `07-meetings/`.
+
+Never fabricate vault contents; if neither mode is available, say so and fall back to web research.
+Keep `11-tap-crm/`, `10-hermes-work/`, and `liberty/` out of the audit prospect pool.
 
 ## Hard rules (inherited by every engine)
 

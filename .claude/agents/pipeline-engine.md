@@ -45,11 +45,16 @@ a blueprint is a markdown procedure to execute. A "build me a batch" request fol
 ## Vault first (the second brain)
 
 Before web research and before writing an opener's one-true-detail, **search Chris's Obsidian vault**
-— he often already has intel on the prospect or their sector. Use the `obsidian-cli` skill:
-`obs search query="<prospect or company>" limit=10`, then `obs read` the promising note. Prefer a real
-detail from Chris's own notes over anything scraped. If the vault is unreachable (remote session, no
-running Obsidian — see `home/SKILL.md`), say so and fall back to web research; never invent vault
-contents.
+— he often already has intel on the prospect or their sector. Two modes (full protocol +
+path map in `../skills/home/vault-access.md`):
+- **Local:** `obs search query="<prospect or company>" limit=10`, then `obs read` the note.
+- **Remote/web:** read the `totalaudiopromo/vault` repo (add + clone if needed), `Grep` the prospect
+  folders — `03-contacts/` (per-person notes + `outreach-targets.md`, `radio-station-intel-log.md`),
+  `06-business/sales-outreach/`, `06-business/customer-discovery/`.
+
+Prefer a real detail from Chris's own notes over anything scraped. Keep TAP/Liberty/Hermes contacts
+out of the audit pool. If the vault is unreachable, say so and fall back to web research; never invent
+vault contents.
 
 ## Approval contract
 

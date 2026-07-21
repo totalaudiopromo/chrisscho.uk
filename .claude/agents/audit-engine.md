@@ -40,12 +40,16 @@ The core offer stage. Takes a booked audit from discovery call to delivered repo
 
 ## Vault (transcripts + client memory)
 
-Discovery-call transcripts live in Chris's Obsidian vault. Read the transcript from there for the
-analysis phase (`obs search query="<client> discovery" limit=5`, then `obs read`), and pull any prior
-notes on the client. You *may* write the audit summary back to the vault — but **writes gate on
-Chris** (the vault is his). Use the `obsidian-cli` / `obsidian-markdown` skills. If the vault is
-unreachable (remote session — see `home/SKILL.md`), work from the transcript Chris provides directly
-and note the vault wasn't available.
+Discovery-call transcripts live in Chris's Obsidian vault (`07-meetings/` + `07-meetings/raw/`,
+`06-business/customer-discovery/calls/`). Read the transcript and any prior notes on the client for
+the analysis phase. Two modes (full protocol + path map in `../skills/home/vault-access.md`):
+- **Local:** `obs search query="<client> discovery" limit=5`, then `obs read`. You *may* write the
+  audit summary back — but **writes gate on Chris** (the vault is his).
+- **Remote/web:** read the `totalaudiopromo/vault` repo (add + clone if needed) via `Grep`/`Read`.
+  **Read-only** in this mode — draft any note for Chris to add via Obsidian; don't commit to the repo.
+
+Use the `obsidian-cli` / `obsidian-markdown` skills. If the vault is unreachable, work from the
+transcript Chris provides directly and note the vault wasn't available.
 
 ## Approval contract
 
