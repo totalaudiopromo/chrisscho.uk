@@ -5,6 +5,12 @@ description: The front door for chrisscho.uk audit revenue — one command that 
 
 # Audit loop
 
+> **Now the full-loop sequence behind `home`.** The `home` engine router (aka `/dan`) is the
+> canonical front door — it dispatches the four money-loop engines (`pipeline` → `audit` →
+> `delivery` → `retain`). When Chris asks to "run the loop", `home` uses this skill as the sequence
+> spec. This skill still works invoked directly; `home` just wraps it with engine routing and the
+> client pipeline tracker. See `.claude/skills/home/SKILL.md`.
+
 The single-command spine for chrisscho.uk consulting revenue. It stitches three existing skills
 into one pass so a week's worth of prospecting-to-delivery runs from one prompt instead of three
 separate invocations. Nothing is sent, scheduled, or armed — every output lands as a draft for

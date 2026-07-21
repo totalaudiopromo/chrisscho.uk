@@ -11,8 +11,16 @@ Chris will describe what he wants in plain language and won't remember command n
 intents to the right skill automatically — don't wait for him to name the skill or type a slash
 command. Everything below is **draft-only**: draft it, hand it to Chris, never send/schedule/arm.
 
+**Front door / engine router:** for anything about the audit business, `home` (aka **`/dan`**) is the
+entrypoint — it classifies the request to one of four money-loop engines (`pipeline` → `audit` →
+`delivery` → `retain`), answers "where's everyone / what's next" from the git-ignored client pipeline
+tracker, and runs the whole loop on request. The individual skills below are the engines' blueprints;
+route through `home` when the intent spans stages or you want the pipeline view, and straight to a
+skill when Chris names one stage. `home` supersedes the older `audit-loop` chainer.
+
 | When Chris says something like… | Use |
 |---|---|
+| "dan", "/dan", "home", "run the loop", "the money loop", "where's everyone", "what's next", "which engine", "route this" | **home** (engine router) |
 | "who should I reach out to this week", "I need more audit leads/conversations", "let's do outreach", "fill the pipe", "line up next week's audits", "I've got a discovery-call transcript", "prep my audit call" | **audit-loop** (the front door — chains the three below end to end) |
 | "build me a prospect batch", "refresh the prospect list", "find named [sector] contacts" | **audit-prospect-research** |
 | "run an audit", "analyse this transcript", "build the audit report", "audit for [client]" | **music-ai-audit** |
