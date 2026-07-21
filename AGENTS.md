@@ -16,6 +16,7 @@ command. Everything below is **draft-only**: draft it, hand it to Chris, never s
 | "who should I reach out to this week", "I need more audit leads/conversations", "let's do outreach", "fill the pipe", "line up next week's audits", "I've got a discovery-call transcript", "prep my audit call" | **audit-loop** (the front door — chains the three below end to end) |
 | "build me a prospect batch", "refresh the prospect list", "find named [sector] contacts" | **audit-prospect-research** |
 | "run an audit", "analyse this transcript", "build the audit report", "audit for [client]" | **music-ai-audit** |
+| "onboard my new client", "kick off the build", "deliver the project", "scope the build", "handover", "30-day check-in" | **client-delivery** |
 | "write this up as a case study", "turn this audit/win into proof", "post this win properly" | **case-study** |
 | "launch a campaign", "radio/playlist/press pitch", "enrich these contacts", "write pitch emails", "track this campaign" | **music-campaign-suite** |
 | "prep a demo", "pitch script for a call" | **demo-script-generator** |

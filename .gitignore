@@ -44,3 +44,4 @@ next-env.d.ts
 .claude/skills/music-ai-audit/report/clients/
 .claude/skills/audit-prospect-research/prospects/
 .claude/skills/case-study/case-studies/clients/
+.claude/skills/client-delivery/clients/
