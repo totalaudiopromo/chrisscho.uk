@@ -33,6 +33,13 @@ Corey iterated this deck a dozen times to keep it clear. Rules:
 - Every prescription is a tool Chris would install himself.
 - No fabricated benchmarks. Estimates are defensible or they don't go in.
 
+## Companion primer (ships with every report)
+
+`ai-basics-onepager.md` is a generic, tool-agnostic "how to use AI without hurting yourself" page
+for total beginners. Send it as page 2 of the report PDF (or a short separate PDF alongside the
+deck) — never instead of the report. Don't personalise it per client; client specifics live in the
+slides. Strip the operator-note comment at the top before sending.
+
 ## Optional accent swap
 
 The Tweaks panel in Corey's original let you recolour. Here, change `--accent` in the `:root` block

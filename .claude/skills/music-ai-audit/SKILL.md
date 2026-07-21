@@ -27,7 +27,7 @@ hours/week of savings are found within 30 days.** (Raised from 5 on 16 Jul 2026 
 | --- | --- | --- |
 | 1. Discovery | 45-min call, recorded with an AI note-taker (Fathom/Granola). Probe where time goes; save every prescription for the report, don't give it away live. | `discovery-questions.md` |
 | 2. Analysis | Drop the transcript into Claude. Surface 5–7 pain points, prescribe off-the-shelf tools, sanity-check fit, map to effort/impact + hours saved. | `analysis-prompt.md` |
-| 3. Report | Fill the branded template — exec summary, effort-vs-impact matrix, tool cards, 4-day quick-start, ROI. Keep it stupid-simple. | `report/` |
+| 3. Report | Fill the branded template — exec summary, effort-vs-impact matrix, tool cards, 4-day quick-start, ROI. Keep it stupid-simple. Ship the beginner primer (`report/ai-basics-onepager.md`) alongside it. | `report/` |
 | 4. Review call | Email the report ahead, then a 30-min screen-share walkthrough. Close with the 3 upsell questions. | `review-call.md` |
 
 Upsell menu + AI Concierge retainer operations (intake form, call-1 onboarding, AOA loop,
