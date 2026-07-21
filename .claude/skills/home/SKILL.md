@@ -80,6 +80,14 @@ The pipeline lives in Chris's Notion — the same "client hub" the Concierge mod
 within-session scratch copy — never as the source of truth, and never committed. If Notion is
 unavailable in a given session, tell Chris the tracker is running cache-only and won't persist.
 
+## Roadmap: up-market to FDE
+
+Where the business is heading *above* the SMB audit loop — Forward-Deployed-Engineer engagements at a
+higher ICP and price. It's a **growth vector, not a current mode**, gated on Chris's 30-Day Sprint. See
+`roadmap-fde.md`. The rule for now: if a request or prospect is clearly FDE-sized (larger company,
+embedded/enterprise ask, £5k+), **flag it to Chris as the premium path** — don't shrink it into a £750
+audit, and don't build enterprise machinery yet. Otherwise keep running the SMB loop.
+
 ## The second brain (Obsidian vault)
 
 Chris's Obsidian vault (`~/vault/`) is the long memory — prospect intel, call transcripts, business

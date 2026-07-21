@@ -61,6 +61,9 @@ Full episode transcript: `source-transcript.txt`.
 - **Audit** — £750 (first 2–3 at £250 or free to build case studies).
 - **Implementation build** — £2,000–£8,000, done-for-you, £750 credited.
 - **AI Concierge retainer** — £900–£1,500/mo, 2×45-min calls + async, roster cap 6.
+- **FDE engagement** *(up-market, future)* — embedded enterprise work at £5k+ / £4k+/mo. The premium
+  rung above the concierge; a growth vector gated on the 30-Day Sprint, not sold yet. See
+  `../home/roadmap-fde.md`.
 
 Related: the `outreach/` folder holds the client-acquisition playbook. `prospect-coach` (TAP repo)
 can host the daily-target + post-call-capture cadence.

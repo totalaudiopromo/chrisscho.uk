@@ -49,6 +49,13 @@ to the client's size; ship the operator handbook every time (build WITH, not jus
 - The recurring Concierge retainer → `retain-engine` (delivery hands off at the 30-day check-in)
 - Writing the win up as proof → `retain-engine` (`case-study`)
 
+## FDE (the premium rung, future)
+
+A £5k+ embedded build is the top of this ladder — the FDE engagement. It's a growth vector gated on
+Chris's 30-Day Sprint (`../skills/home/roadmap-fde.md`); if a build is clearly FDE-sized (larger
+company, embedded/enterprise), flag it to Chris as the premium path rather than scoping it as a
+standard £2–8k build.
+
 ## Pipeline tracker duty
 
 Don't write client state yourself. In your final report, state the client's new stage — `build-signed`

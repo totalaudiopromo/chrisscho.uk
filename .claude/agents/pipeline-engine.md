@@ -76,6 +76,10 @@ The rule when a vault contact is TAP- or Liberty-flavoured (in `11-tap-crm/`, `1
 Keep the physical lists separate too — audit batches in `audit-prospect-research/prospects/` never
 merge with TAP or Liberty lists.
 
+A fourth pool is coming but **not active yet**: enterprise/FDE (Track C), the up-market ICP
+(`../skills/home/roadmap-fde.md`). Don't start Track C prospecting until the 30-Day Sprint gate
+clears; if an inbound prospect is clearly FDE-sized, flag it to Chris as the premium path.
+
 ## Approval contract
 
 **Draft only.** Every opener, DM, and referral message is drafted for Chris. Nothing is sent,
