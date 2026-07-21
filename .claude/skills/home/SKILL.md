@@ -80,6 +80,27 @@ The pipeline lives in Chris's Notion — the same "client hub" the Concierge mod
 within-session scratch copy — never as the source of truth, and never committed. If Notion is
 unavailable in a given session, tell Chris the tracker is running cache-only and won't persist.
 
+## The second brain (Obsidian vault)
+
+Chris's Obsidian vault (`~/vault/`) is the long memory — prospect intel, call transcripts, business
+notes. Engines consult it before reinventing what Chris already knows:
+
+- **`pipeline`** searches the vault for existing intel on a prospect before web research and before
+  writing an opener's one-true-detail — Chris often already has the note.
+- **`audit`** reads discovery-call transcripts from the vault for analysis, and can write the audit
+  summary back (gated).
+
+Access is via the `obsidian-cli` skill (the `obs` command) and `obsidian-markdown` for writing valid
+notes. Typical reads: `obs search query="<prospect>" limit=10`, `obs read file="<note>"`,
+`obs files folder="03-contacts"`. **Writes to the vault gate on Chris** — the vault IS Chris.
+
+**The one constraint (be honest about it):** `obs` talks to a *running Obsidian instance over IPC*,
+so the vault is reachable only when Chris runs `home`/the engines **locally on his Mac**. In a
+remote/web session there's no Obsidian and no `~/vault/` — the vault is unavailable. If an engine
+needs vault data in a remote session, say so plainly and fall back to web research (or, if the vault
+is mirrored to a git repo, that repo can be added to the session as the remote read path). Never
+fabricate vault contents.
+
 ## Hard rules (inherited by every engine)
 
 - **Draft only.** Every client-facing message, report, SOW, and post is drafted for Chris to review

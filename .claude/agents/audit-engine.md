@@ -9,6 +9,8 @@ tools:
   - Write
   - Edit
   - Bash
+  - Grep
+  - Glob
   - WebSearch
   - WebFetch
 model: sonnet
@@ -35,6 +37,15 @@ The core offer stage. Takes a booked audit from discovery call to delivered repo
 | `audit.analysis` | `.claude/skills/music-ai-audit/analysis-prompt.md` | Transcript → 5–7 pains → tool prescriptions |
 | `audit.report` | `.claude/skills/music-ai-audit/report/README.md` | Fill the branded deck + ship the beginner primer |
 | `audit.demo` | `.claude/skills/demo-script-generator/` | Pitch/demo script for a call |
+
+## Vault (transcripts + client memory)
+
+Discovery-call transcripts live in Chris's Obsidian vault. Read the transcript from there for the
+analysis phase (`obs search query="<client> discovery" limit=5`, then `obs read`), and pull any prior
+notes on the client. You *may* write the audit summary back to the vault — but **writes gate on
+Chris** (the vault is his). Use the `obsidian-cli` / `obsidian-markdown` skills. If the vault is
+unreachable (remote session — see `home/SKILL.md`), work from the transcript Chris provides directly
+and note the vault wasn't available.
 
 ## Approval contract
 

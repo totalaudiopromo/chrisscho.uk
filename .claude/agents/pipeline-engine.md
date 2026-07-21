@@ -9,6 +9,8 @@ tools:
   - Write
   - Edit
   - Bash
+  - Grep
+  - Glob
   - WebSearch
   - WebFetch
 model: sonnet
@@ -39,6 +41,15 @@ named, verified list with ready-to-review openers.
 a blueprint is a markdown procedure to execute. A "build me a batch" request follows
 `pipeline.research`; "draft openers for these" follows `pipeline.openers`; a strategy question follows
 `pipeline.methods`.
+
+## Vault first (the second brain)
+
+Before web research and before writing an opener's one-true-detail, **search Chris's Obsidian vault**
+— he often already has intel on the prospect or their sector. Use the `obsidian-cli` skill:
+`obs search query="<prospect or company>" limit=10`, then `obs read` the promising note. Prefer a real
+detail from Chris's own notes over anything scraped. If the vault is unreachable (remote session, no
+running Obsidian — see `home/SKILL.md`), say so and fall back to web research; never invent vault
+contents.
 
 ## Approval contract
 
