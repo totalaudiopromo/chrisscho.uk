@@ -35,8 +35,9 @@ named, verified list with ready-to-review openers.
 | `pipeline.methods` | `.claude/skills/music-ai-audit/outreach/playbook.md` | The seven zero-capital acquisition methods |
 | `pipeline.openers` | `.claude/skills/music-ai-audit/outreach/openers.md` | The opener pattern bank + calm three-touch follow-up |
 
-Pick the blueprint that matches the request and run it. A "build me a batch" request runs
-`pipeline.research`; "draft openers for these" runs `pipeline.openers`; a strategy question runs
+**Read** the matching blueprint file and follow its steps — you have `Read`, not the `Skill` tool, so
+a blueprint is a markdown procedure to execute. A "build me a batch" request follows
+`pipeline.research`; "draft openers for these" follows `pipeline.openers`; a strategy question follows
 `pipeline.methods`.
 
 ## Approval contract
@@ -54,9 +55,9 @@ if verified live.
 
 ## Pipeline tracker duty
 
-After every run, update `.claude/clients/pipeline.md` (git-ignored): add new prospects at stage
-`prospect`, move contacted ones to `contacted`, and log the next action. This is how `home` knows
-who's in flight.
+Don't write client state yourself. In your final report, state each client's new stage and next
+action; **home persists it to the canonical Notion pipeline** (see `home/SKILL.md`). New prospects →
+`prospect`; contacted ones → `contacted`.
 
 ## Reporting
 

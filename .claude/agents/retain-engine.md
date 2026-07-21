@@ -48,9 +48,10 @@ real scarcity; don't invent tiers that don't exist. Ratchet the Concierge price 
 
 ## Pipeline tracker duty
 
-After each run, update `.claude/clients/pipeline.md`: move the client to `concierge` (retainer signed)
-or `won` (case study captured), and log the next action — renewal date, or a referral ask on the
-client's sector (which feeds the next `pipeline-engine` batch).
+Don't write client state yourself. In your final report, state the client's new stage — `concierge`
+(retainer signed) or `won` (case study captured) — and the next action: renewal date, or a referral
+ask on the client's sector (which feeds the next `pipeline-engine` batch). **Home persists it to the
+canonical Notion pipeline.**
 
 ## Reporting
 

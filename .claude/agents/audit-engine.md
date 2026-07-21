@@ -50,9 +50,9 @@ tool you can't stand behind. No fabricated benchmarks; estimates are defensible 
 
 ## Pipeline tracker duty
 
-After each run, update `.claude/clients/pipeline.md`: move the client to `audit-booked` (prep done)
-or `audit-delivered` (report + review call done), and log the next action — usually the review call
-or the build/retainer decision.
+Don't write client state yourself. In your final report, state the client's new stage — `audit-booked`
+(prep done) or `audit-delivered` (report + review call done) — and the next action, usually the review
+call or the build/retainer decision. **Home persists it to the canonical Notion pipeline.**
 
 ## Reporting
 

@@ -34,7 +34,10 @@ points at. One source of truth; update the skill, the engine follows.
 2. Map it to **one** engine using the table below.
 3. Hand off: `Task(subagent_type: '<engine>', name: '<name>', prompt: ...)`. Names: `pipeline`,
    `audit`, `delivery`, `retain`. Follow-ups in the same session use `SendMessage(to: '<name>')`.
-4. The engine reads the request, picks its blueprint (the skill), and runs it.
+4. The engine **reads its blueprint file and follows it** — engines have `Read`, not the `Skill`
+   tool, so a blueprint is a markdown procedure to execute, not a skill to invoke.
+5. The engine reports its outcome and the client's new stage back to home; **home persists that to the
+   durable tracker** (below). Engines don't write client state themselves.
 
 ### Engine map
 
@@ -53,19 +56,29 @@ sequence spec. Dispatch each engine in turn; carry the pipeline tracker forward 
 and hand back to Chris at every real gate (a send, a spend, a booking, a sign-off) — see the hard
 rules below.
 
-## The client pipeline tracker (state — git-ignored)
+## The client pipeline tracker (state)
 
-`.claude/clients/pipeline.md` (git-ignored) is the ledger of where every client sits. One row per
-client:
+The ledger of where every client sits. One row per client:
 
 `client · sector/track · stage · next action · £ value · last touch · updated`
 
 Stages, in order: `prospect → contacted → replied → audit-booked → audit-delivered → build-signed →
 build-delivered → concierge → won (case study) / dead`.
 
-Home reads it to answer **"where's everyone"** and **"what's next"**, and to pick up mid-loop. Every
-engine updates the tracker for the client it just touched (its final duty each run). If the file
-doesn't exist yet, create it from the header above. **Never commit it** — it holds real client data.
+**Canonical store = Notion (durable).** This repo usually runs in an ephemeral web/remote session
+whose container is reclaimed between visits, so a local file is *not* a safe home for client state.
+The pipeline lives in Chris's Notion — the same "client hub" the Concierge model already uses
+(`../music-ai-audit/upsells-and-concierge.md`). Home reads and writes it via the Notion MCP tools.
+- **First run:** if no pipeline database exists yet, home *proposes* creating one (a Notion database
+  with the columns above) and waits for Chris's go-ahead — creating structure in his workspace is a
+  real side-effect, so it gates. It does not auto-create.
+- **Every run after:** home reads the Notion pipeline to answer **"where's everyone"** and
+  **"what's next"**, and updates the row for whichever client an engine just touched (engines report
+  the stage change; home writes it).
+
+**Local cache (optional, ephemeral):** `.claude/clients/pipeline.md` (git-ignored) may be used as a
+within-session scratch copy — never as the source of truth, and never committed. If Notion is
+unavailable in a given session, tell Chris the tracker is running cache-only and won't persist.
 
 ## Hard rules (inherited by every engine)
 

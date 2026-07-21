@@ -12,11 +12,14 @@ intents to the right skill automatically — don't wait for him to name the skil
 command. Everything below is **draft-only**: draft it, hand it to Chris, never send/schedule/arm.
 
 **Front door / engine router:** for anything about the audit business, `home` (aka **`/dan`**) is the
-entrypoint — it classifies the request to one of four money-loop engines (`pipeline` → `audit` →
-`delivery` → `retain`), answers "where's everyone / what's next" from the git-ignored client pipeline
-tracker, and runs the whole loop on request. The individual skills below are the engines' blueprints;
-route through `home` when the intent spans stages or you want the pipeline view, and straight to a
-skill when Chris names one stage. `home` supersedes the older `audit-loop` chainer.
+default entrypoint — it classifies the request to one of four money-loop engines (`pipeline` →
+`audit` → `delivery` → `retain`), answers "where's everyone / what's next" from the Notion client
+pipeline, and runs the whole loop on request. The individual skills below are the engines'
+blueprints. **Precedence:** use `home` for anything spanning stages, a pipeline/status question, or
+"run the loop"; go **straight to a single skill only when Chris explicitly names that one stage**
+("just build me a batch", "analyse this transcript") and no cross-stage state or tracker update is
+needed. When in doubt, `home`. It supersedes the older `audit-loop` chainer (now home's full-loop
+sequence).
 
 | When Chris says something like… | Use |
 |---|---|

@@ -1,8 +1,12 @@
-# Client pipeline tracker — template
+# Client pipeline tracker — schema
 
-Copy this to `.claude/clients/pipeline.md` (git-ignored) as the live ledger. `home` and every engine
-read and update it. It's the answer to "where's everyone" and "what's next". **Never commit the live
-file** — it holds real client data.
+This defines the pipeline's **columns and stages**. The **canonical, durable store is Notion**, not a
+file — this repo usually runs in an ephemeral web session, so a local file would evaporate between
+visits (see `SKILL.md` → "The client pipeline tracker"). `home` owns reads/writes to the Notion
+pipeline; use these columns when creating or updating it.
+
+A local `.claude/clients/pipeline.md` (git-ignored) may hold a within-session cache only — never the
+source of truth, **never committed** (it holds real client data).
 
 Stages, in order:
 `prospect → contacted → replied → audit-booked → audit-delivered → build-signed → build-delivered → concierge → won (case study) / dead`
