@@ -52,9 +52,29 @@ path map in `../skills/home/vault-access.md`):
   folders — `03-contacts/` (per-person notes + `outreach-targets.md`, `radio-station-intel-log.md`),
   `06-business/sales-outreach/`, `06-business/customer-discovery/`.
 
-Prefer a real detail from Chris's own notes over anything scraped. Keep TAP/Liberty/Hermes contacts
-out of the audit pool. If the vault is unreachable, say so and fall back to web research; never invent
-vault contents.
+Prefer a real detail from Chris's own notes over anything scraped. If the vault is unreachable, say so
+and fall back to web research; never invent vault contents.
+
+## Pool separation (clear split, some overlap)
+
+Three pools exist and must stay distinct: **TAP prospects**, **Liberty clients**, and **chrisscho.uk
+audit prospects** (broad owner-run businesses — music *and* Brighton/Sussex local). The overlap is
+real: a radio-promo agency framed for TAP in the vault can also be a perfect £750-audit ICP, and one
+business can plausibly sit in more than one pool. That overlap is exactly why the split has to be
+deliberate — **never silently reuse a contact across pools.**
+
+The rule when a vault contact is TAP- or Liberty-flavoured (in `11-tap-crm/`, `10-hermes-work/`,
+`liberty/`, or a note that says "Why TAP" / "ex-Liberty" / "hired Chris"):
+
+- **Liberty clients:** never cold-audit them. They can be approached as audit prospects *only* warm,
+  via method 1 (warm mini-audit) — and only with Chris's say-so.
+- **TAP-framed overlaps:** do **not** auto-draft a cold audit opener. Surface the name to Chris with
+  a one-line note ("tagged TAP in the vault; also a strong audit ICP — pull into the audit pool?") and
+  let him assign the track. Draft only once he's confirmed.
+- **Clean cold prospects** (no TAP/Liberty framing): draft the opener as normal.
+
+Keep the physical lists separate too — audit batches in `audit-prospect-research/prospects/` never
+merge with TAP or Liberty lists.
 
 ## Approval contract
 
