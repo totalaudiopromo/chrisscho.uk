@@ -42,7 +42,9 @@ named directories and communities, stats for copy). Refresh it if older than ~2 
 4. **Score fit (1–3).** 3 = visible admin pain (slow enquiry reply, manual booking, heavy
    release schedule) + right size. 1 = plausible but no visible signal.
 5. **Draft the opener** using the playbook scripts (method 5 message 1 for cold, method 1 text
-   for warm, method 2 for referral partners). One line of genuine specificity per prospect —
+   for warm, method 2 for referral partners) or the fuller pattern library in
+   `../music-ai-audit/outreach/openers.md` (observation, audit-offer, value-first, hours-back,
+   two-line, voice-note, proof-drop). One line of genuine specificity per prospect —
    something true from their site, not flattery.
 6. **Record the batch** in `prospects/YYYY-MM-DD-<track>-<sector>.md` (git-ignored, see below)
    as a table: business, URL, contact name + where found, size estimate, fit score, pain
